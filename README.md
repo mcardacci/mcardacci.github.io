@@ -1,2 +1,2 @@
 # mcardacci.github.io
-My DBC Github site.
+My DBC Github blog.
