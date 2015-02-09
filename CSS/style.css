@@ -41,7 +41,7 @@ display: none
 .top h1, .top h2 {
 font-size: 70px;
 padding-top: 100px;
-padding-left: 100px;
+padding-left: 150px;
 }
 h1 a, .top h2 a {
 color: #CCC;
@@ -204,7 +204,7 @@ width: 80%;
 pre code {
 background-color: inherit;
 }
-.logo-cont {
+.-cont {
 height: 100px;
 }
 .logo-cont canvas {
