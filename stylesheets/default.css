@@ -32,14 +32,14 @@ a:hover {
 
 /* Header */
 
-header {
+#header {
   font-size: 0.8em;
   width: 60%;
   color: rgba(34, 78, 60, 0.9);
   display: inline-block;
 }
 
-header h1 {
+#header h1 {
   margin-top: 0px;
   margin-bottom: 15px;
 }
