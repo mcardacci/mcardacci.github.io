@@ -18,3 +18,7 @@ main {
   margin: auto;
   text-align: justify;
 }
+
+#edit {
+  font-style: italic;
+}
