@@ -29,31 +29,35 @@ article h1 {
   color:#006570
 }
 p {
-margin: 3em 0 3.5em;
-font-family: 'baskerville';
+  margin: 3em 0 3.5em;
+  font-family: 'baskerville';
 }
 a {
-color:  #bc1e1b;
+  color:  #bc1e1b;
 }
 .remove-margin {
-margin: 0;
+  margin: 0;
 }
 .remove-padding {
-padding: 0;
+  padding: 0;
 }
 .icon-list {
-width: 245px;
-background: none;
-font-family: 'Exo', sans-serif;
+  width: 245px;
+  background: none;
+  font-family: 'Exo', sans-serif;
+}
+.icon-list a {
+  color: #113c48;
 }
 .icon-list a:hover {
-text-decoration: none;
+  text-decoration: none;
+  color: #bc1e1b;
 }
 .display {
-display: block !important;
+  display: block !important;
 }
 .morph-shape {
-background-color: #373A47;
+background-color: #5c769a ;
 }
 .menu-wrap {
 float: right;
@@ -196,9 +200,9 @@ float: left;
 width: 12%;
 }
 .menu a span {
-display: none;
+  display: none;
 }
-}
+
 @media (min-width: 960px) {
 .content-wrap {
 width: 80%;
