@@ -123,16 +123,21 @@ section p span {
 }
 
 .big {
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 #hidden {
-  font-size: 1.3em;
+  font-size: 1.25em;
+}
+
+.break {
+  line-height: 50px;
 }
 
 #line-1 {
   opacity: 0;
   transition: opacity 2s;
+  letter-spacing: -4px;
 }
 
 #line-2 {
