@@ -5,11 +5,7 @@ html {
 }
 
 body {
-  /*background-color: rgba(200, 200, 195, 0.1);*/
-  /*background: linear-gradient(180deg, #FFFFFF, #DCDBDA);*/
-  /*background-position: absolute;*/
   background-repeat: no-repeat;
-  /*background-size: 100%;*/
   background: linear-gradient(180deg, rgba(255, 246, 230, 0.5), rgba(40, 45, 65, 0.8)) fixed, url("../imgs/mountains.jpg") fixed center center no-repeat;
   padding-left: 4%;
   padding-right: 4%;
@@ -32,16 +28,35 @@ a:hover {
 
 /* Header */
 
-#header {
+div.contain {
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 15px;
+}
+
+div.left, div.right {
+  width: 50%;
+}
+
+div.left {
+  float: left;
+}
+
+div.right {
+  float: right;
+}
+
+header {
   font-size: 0.8em;
   width: 60%;
   color: rgba(34, 78, 60, 0.9);
   display: inline-block;
 }
 
-#header h1 {
-  margin-top: 0px;
-  margin-bottom: 15px;
+header h1 {
+  margin: 0;
 }
 
 #github {
@@ -72,19 +87,11 @@ li {
   display: inline;
 }
 
-
-nav {
-  display: inline-block;
-}
+/* Social Media Icon(s) */
 
 #social-media {
   display: inline-block;
   float: right;
-  width: 30%;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 4px;
-  letter-spacing: 20px;
   text-align: right;
 }
 
@@ -104,6 +111,8 @@ footer {
   position: fixed;
   width: 100%;
   left: 0px;
+  padding-top: 15px;
+  clear: both;
 }
 
 /* Main section */
