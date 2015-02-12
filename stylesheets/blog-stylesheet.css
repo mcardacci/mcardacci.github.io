@@ -9,7 +9,6 @@ main {
 
 .blog-header {
   width: 50%;
-  margin: 0 auto;
   text-align: center;
   line-height: 10px;
 }
@@ -20,7 +19,6 @@ main {
 
 .blog-post {
   width: 50%;
-  margin: 0 auto;
   text-align: justify;
   font-size: 1.3em;
 }
