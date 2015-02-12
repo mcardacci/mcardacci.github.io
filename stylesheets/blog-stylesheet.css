@@ -1,0 +1,20 @@
+main {
+  margin-top: 5em;
+}
+
+.blog-header {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  line-height: 10px;
+}
+
+.blog-header h4 {
+  font-style: italic;
+}
+
+.blog-post {
+  width: 50%;
+  margin: auto;
+  text-align: justify;
+}
