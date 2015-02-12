@@ -7,7 +7,7 @@ html {
 body {
   /*background-color: rgba(200, 200, 195, 0.1);*/
   /*background: linear-gradient(180deg, #FFFFFF, #DCDBDA);*/
-  background-position: absolute;
+  /*background-position: absolute;*/
   background-repeat: no-repeat;
   /*background-size: 100%;*/
   background: linear-gradient(180deg, rgba(255, 246, 230, 0.5), rgba(40, 45, 65, 0.8)) fixed, url("../imgs/mountains.jpg") fixed center center no-repeat;
