@@ -1,14 +1,23 @@
 /* Main CSS */
 
+html {
+  height: 100%;
+}
+
 body {
-  background-color: rgba(200, 200, 195, 0.1);
+  /*background-color: rgba(200, 200, 195, 0.1);*/
+  /*background: linear-gradient(180deg, #FFFFFF, #DCDBDA);*/
+  background-position: absolute;
+  background-repeat: no-repeat;
+  /*background-size: 100%;*/
+  background: linear-gradient(180deg, rgba(255, 246, 230, 0.5), rgba(40, 45, 65, 0.8)) fixed, url("../imgs/mountains.png") fixed center center no-repeat;
   padding-left: 4%;
   padding-right: 4%;
-  padding-top: 4%%;
+  padding-top: 4%;
 }
 
 * {
-  font-family: 'Cutive mono';
+  font-family: 'Quicksand', sans-serif;
 }
 
 a {
@@ -16,12 +25,16 @@ a {
   color: rgba(150, 39, 42, 0.9);
 }
 
+a:hover {
+  color: black;
+}
+
 
 /* Header */
 
 header {
   font-size: 0.8em;
-  width: 50%;
+  width: 60%;
   color: rgba(34, 78, 60, 0.9);
   display: inline-block;
 }
@@ -38,30 +51,101 @@ header h1 {
 
 /* Navigation */
 
-nav {
-  display: inline-block;
+#navigation {
+  list-style: none;
+  padding: 0px;
+  width: 20%;
+  margin: 0px;
+  float: left;
 }
 
-nav #navigation {
-  font-size: 1.1em;
-  display: inline-block;
-  width: 50%;
+#blog {
+  list-style: none;
+  padding-left: 0.5em;
+}
+
+li {
+  margin: 0px;
 }
 
 #navigation a {
-  display: block;
-  width: 50%;
+  display: inline;
+}
+
+
+nav {
+  display: inline-block;
 }
 
 #social-media {
   display: inline-block;
   float: right;
-  width: 10%;
+  width: 30%;
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 4px;
+  letter-spacing: 20px;
+  text-align: right;
 }
 
 #social-media a {
   display: inline;
+}
+
+#social-media a:hover {
+  opacity: 0.5;
+}
+
+/* Footer */
+
+footer {
+  font-size: 0.7em;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  left: 0px;
+}
+
+/* Main section */
+
+section p span {
+  font-family: 'Cutive mono', monospace;
+  font-size: 2em;
+}
+
+.big {
+  font-size: 1.5em;
+}
+
+#hidden {
+  font-size: 1.3em;
+}
+
+#line-1 {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+#line-2 {
+  font-size: 1.5em;
+  color: #050505;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+#line-1:hover {
+  opacity: 1;
+  transition: opacity 3.5s;
+}
+
+#line-1:hover + #line-2 {
+  opacity: 1;
+  transition: opacity 7s;
+}
+
+section {
+  width: 50%;
+  text-align: center;
+  letter-spacing: -2px;
+  margin: auto;
 }

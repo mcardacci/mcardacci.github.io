@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="stylesheets/default.css">
-    <link href='http://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cutive+Mono|Quicksand:300,400,700' rel='stylesheet' type='text/css'>
     <title>Ace Burgess</title>
   </head>
   <body>
@@ -13,21 +13,26 @@
     </header>
 
     <nav id="social-media">
-      <a href="email"><img src="imgs/message-25.png" /></a>
-      <a href="twitter"><img src="imgs/twitter-25.png" /></a>
+      <a href="http://www.twitter.com/aceburgess"><img src="imgs/twitter-25.png" /></a>
     </nav>
 
-    <nav id="navigation">
-      <a href="#">About Me</a>
-      <a href="#">Contact</a>
-      <a href="#">GitHub</a>
-      <a href="#">Blog</a>
-    </nav>
+    <ul id="navigation">
+      <li><a href="index.html">About Me</a></li>
+      <li><a href="mailto:thankace@gmail.com">Contact</a></li>
+      <li><a href="http://www.github.com/aceburgess">GitHub</a></li>
+      <li><a href="#">Blog</a></li>
+        <ul id="blog">
+          <li>-<a href="blog/c1-chefs-kitchen.html">DBCulture</a></li>
+          <li>-<a href="blog/t1-git-blog.html">Git Off My Property</a></li>
+        </ul>
+    </ul>
 
     <section>
       <p>
-        Hi my name is Ace Burgess.<br>
-        I'm learning...
+        <span id="hidden">There is a secret message hidden below!<br>
+          Move your cursor over the area and you shall see.</span><br>
+        <span id="line-1"><span class="big">"I</span>'m for whatever gets your through the night.<span class="big">"</span><br></span>
+        <span id="line-2"><span class="big">-</span>Frank Sinatra</span>
       </p>
     </section>
 
