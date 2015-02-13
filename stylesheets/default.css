@@ -89,6 +89,11 @@ li {
 
 /* Social Media Icon(s) */
 
+#social-media img {
+  width: 25px;
+  height: 25px;
+}
+
 #social-media {
   display: inline-block;
   float: right;
