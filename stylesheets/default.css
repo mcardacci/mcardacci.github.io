@@ -6,7 +6,7 @@ html {
 
 body {
   background-repeat: no-repeat;
-  background: linear-gradient(180deg, rgba(255, 246, 230, 0.5), rgba(40, 45, 65, 0.8)) fixed, url("../imgs/mountains.jpg") fixed center center no-repeat;
+  background: linear-gradient(180deg, rgba(255, 246, 230, 0.5), rgba(40, 45, 65, 0.8)) fixed, url("../imgs/mountains-opt.jpg") fixed center center no-repeat;
   padding-left: 4%;
   padding-right: 4%;
   padding-top: 4%;
