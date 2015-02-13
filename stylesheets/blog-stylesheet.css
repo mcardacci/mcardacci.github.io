@@ -8,10 +8,14 @@ main {
 }
 
 .blog-header {
-  width: 50%;
+  width: 55%;
   margin: auto;
   text-align: center;
-  line-height: 10px;
+  line-height: ;
+}
+
+.blog-header h2 {
+  font-size: 0.9em;
 }
 
 .blog-header h4 {
