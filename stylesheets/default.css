@@ -95,11 +95,7 @@ li {
   text-align: right;
 }
 
-#social-media a {
-  display: inline;
-}
-
-#social-media a:hover {
+a#social-media:hover {
   opacity: 0.5;
 }
 
