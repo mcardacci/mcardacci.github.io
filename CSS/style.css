@@ -26,11 +26,15 @@ color: #000;
 }
 article h1 {
   font-family: 'Oswald', sans-serif;
-  color:#006570
+  color:#006570;
 }
 p {
-  margin: 3em 0 3.5em;
+  margin: 1.3em 7em .5em 0;
   font-family: 'baskerville';
+  font-size: 1.2em;
+}
+.first-article {
+  margin-bottom: 3.5em;
 }
 a {
   color:  #bc1e1b;
@@ -48,8 +52,9 @@ a {
 }
 .icon-list a {
   color: #113c48;
+  width:48%;
 }
-.icon-list a:hover {
+.icon-list span:hover {
   text-decoration: none;
   color: #bc1e1b;
 }
