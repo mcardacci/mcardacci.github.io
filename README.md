@@ -1,2 +1,1 @@
-# mcardacci.github.io
-My DBC Github blog.
+I'm so vain I thought this blog was about me.
