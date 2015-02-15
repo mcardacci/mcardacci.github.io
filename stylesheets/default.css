@@ -6,7 +6,8 @@ html {
 
 body {
   background-repeat: no-repeat;
-  background: linear-gradient(180deg, rgba(255, 246, 230, 0.5), rgba(40, 45, 65, 0.8)) fixed, url("../imgs/mountains-opt.jpg") fixed center center no-repeat;
+  background: linear-gradient(180deg, rgba(255, 246, 230, 0.5), rgba(40, 45, 65, 0.8)) fixed, url("../imgs/mountains-opt-cropped.jpeg") fixed center center no-repeat;
+  background-size: cover;
   padding-left: 4%;
   padding-right: 4%;
   padding-top: 4%;
@@ -18,7 +19,7 @@ body {
 
 a {
   text-decoration: none;
-  color: rgba(150, 39, 42, 0.9);
+  color: rgba(110, 38, 35, 0.9);
 }
 
 a:hover {
