@@ -34,6 +34,15 @@ main {
   border-radius: 30px;
 }
 
+.blog-post p:first-child:first-letter {
+  float: left;
+  font-size: 4.7em;
+  padding-top: -1px;
+  padding-right: 10px;
+  margin-top: -20px;
+  margin-bottom: -40px;
+}
+
 #edit {
   font-style: italic;
 }
