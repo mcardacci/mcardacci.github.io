@@ -51,7 +51,32 @@
         <h4>2/14/15</h4>
         <h1>Class, Id, and Efficient CSS3</h1>
           <p>
-            Writing CSS efficiently can be an arduous task and nothing h
+            Classes and ID's are fundamental in understanding organization in HTML and CSS. Here is a brief blog outlining the proper uses of the two and more importantly, why they are proper.
+          </p>
+        <h2>Class</h2>
+          <p>
+            A class, like an ID is attribute a developer can set on an HTML tag. It can help organize an HTML page into sections which in turn makes it easier to style in CSS. Any given class name can be used an infinite amount of times in an HTML document.
+          </p>
+          <img src="../IMG/unordered_list.png">
+          <p>
+            Some developers don't know the full extent to which they can use classes. More than one can be used on the same element.
+          </p>
+          <img src="../IMG/div_class.png">
+          <img src="../IMG/class_css_example.png">
+          <p>
+            This demonstrates a 'div' using two classes on the same 'div'. If used properly, this technique can save you typing time, optimizing your CSS stylesheet.
+          </p>
+        <h2>ID's</h2>
+          <p>
+            The infamous ID is easy to use improperly. A given ID name can only be used once on an HTML doc. If an ID name is used more than once, 2 things happen: Your page fails validation. And it can cause any Javascript to act buggy. CSS can select specific ID's using the hash sign (#).
+          </p>
+          <img src="../IMG/ID_example.png">
+        <h2>How to Use Them Efficiently</h2>
+          <p>
+            Keep in mind that every developer is different. That said, after some research I found the way I typically organize my work flow is sticking Class attributes on tags I want to style, and ID's on elements that I want to call on with Javascript. Keep in mind that Javascript relies heavily on ID's e.g. 'getElementById() function'. Also if I have to review my code it is easier when I know that ID's are tied to javascript.
+            <br>
+            <br>
+            This subject seems to be one of personal choice but this is what works for me. Thanks for reading.
           </p>
     </div>
   <div class="horizontal-line">

@@ -4,6 +4,13 @@ html, body {
   padding:0;
   height:100%;
 }
+img {
+  border-color: #bc1e1b;
+}
+h2 {
+  color: black;
+  font-family: 'Oswald',sans-serif;
+}
 .title {
   text-align: center;
   font-size: 70px;
