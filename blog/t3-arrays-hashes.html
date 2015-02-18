@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+  <title>Arrays vs Hashes</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+  <link href='http://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
+</head>
+
+<main>
+  <div class="blog-header">
+    <h1>Arrays vs Hashes</h1>
+    <h2>The Bloodbath</h2>
+    <h4>February 18, 2015</h4>
+  </div>
+
+  <section class="blog-post">
+    <p>
+      Array's and Hashes are very powerful tools in programming. In Ruby, they store objects and are accessible by a key. The 'key' :) difference here is that arrays are ordered by their key which is always a numeric value starting from 0 (not 1) and going up to the length of the array where as hashes are not ordered in any particular way, and the key is defined by the user and can be an integer, float, string, or other object in Ruby.
+      An example of an array would be:
+      <blockquote class="ruby">
+      array = ['Chocolate', 4, 'You', '2', 'Night']
+      </blockquote>
+      Array's can include a variety of things, but here we are only showing Strings and one Integer value. To access a particular value in the array you would need to call the slot that the value belongs. In this example if you wanted to return the String value 'Chocolate' you would write:
+      <blockquote class="ruby">
+        array[0]<br>
+        <br>
+        <span class="comment"># This would be returned</span><br>
+        =>'Chocolate'
+      </blockquote>
+      If you wanted to return the String value 'Night' you would write:
+      <blockquote class="ruby">
+        array[4]<br>
+        <br>
+        <span class="comment"># This would be returned</span><br>
+        =>'Night'
+      </blockquote>
+      'Night' seems like it's in the 5th position of this array, which it is, but counting always starts at 0. That's an important thing to remember when trying to summon array values.
+      <br>
+      To create an empty array you could do a number of things. The two most common ways that I've seen are:
+      <blockquote class="ruby">
+        new_array = []<br>
+        even_newer_array = array.new
+      </blockquote>
+      Both of these methods will create an empty array, at which point, you can begin to add data.
+      <br>
+      <br>
+      Now on to Hashes...<br>
+      Hashes are similar to array's, but when I first learned about them I was a little confused by the way they look. Now it's a lot clearer, but for one they are surrounded by braces instead of the square brackets arrays use. An example of what a hash looks like:
+      <blockquote class="ruby">
+        hash = {<br>
+          'day' => 'tomorrow',<br>
+          'time' => 11,<br>
+          'why' => 'because it was I who said so.',<br>
+        }
+      </blockquote>
+      The key's are on the left of each `key => value` pair. So in this case the keys are 'day', 'time' and 'why'. These values: 'tomorrow', 11 and 'why' can be called by the same method used in array calling, however, it is not a number that is associated with each value, instead it is the key of the hash. So if you want to return the value 'because it was I who said so.' You would write:
+      <blockquote class="ruby">
+        hash['why']<br>
+        <br>
+        <span class="comment"># This would be returned</span><br>
+        => 'because it was I who said so.'
+      </blockquote>
+      To create a new hash you could also use the same methods used in creating array's:
+      <blockquote class="ruby">
+        new_hash = {}<br>
+        brand_new_hash = Hash.new
+      </blockquote>
+      Both will create empty hashes begging for some `key => value` pairs.
+      <br>
+      These are, obviously, the bare basics of hashes and arrays and as I learn more about using them I will hopefully have some more advanced knowledge to bestow upon you (my loyal blog readers). And if there's anything that needs correction or clarification, please let me know.
+    </p>
+  </section>
+</main>

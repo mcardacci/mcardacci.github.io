@@ -46,3 +46,16 @@ main {
 #edit {
   font-style: italic;
 }
+
+.ruby {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 1px;
+  padding: 5px;
+  color: rgba(200, 210, 200, 0.9);
+  font-size: 0.9em;
+}
+
+.comment {
+  font-style: italic;
+  color: rgba(200, 200, 150, 0.8);
+}
