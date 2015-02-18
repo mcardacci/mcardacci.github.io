@@ -1,0 +1,57 @@
+body
+{
+  background-color: #eeddee;
+}
+
+header
+{
+  text-align: center;
+  width: 100%;
+  font-family: Oswald, sans-serif;
+}
+
+#pair_prog
+{
+  float: left;
+  display: inline-block;
+  width: 33%;
+  font-family: Oswald, sans-serif;
+  height: 300px;
+}
+
+#pp_impo
+{
+  display: inline-block;
+  width: 33%;
+  font-family: Oswald, sans-serif;
+  height: 300px;
+}
+
+#dr_nav
+{
+  float: right;
+  display: inline-block;
+  width: 33%;
+  font-family: Oswald, sans-serif;
+  height: 300px;
+}
+
+#big_pic
+{
+  height: 375px;
+  width: 66%;
+  display: inline-block;
+  background-image: url(http://pairprogrammingisfun.com/images/header.jpg);
+  float: right;
+  background-size: cover;
+}
+
+#lil_pic
+{
+  height: 375px;
+  width: 33%;
+  display: inline-block;
+  background-image: url(http://airpair-blog.s3.amazonaws.com/wp-content/uploads/2014/06/pair_programming.jpg);
+  float:left;
+  background-size: cover;
+}
