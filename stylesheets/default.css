@@ -120,7 +120,7 @@ footer {
 /* Main section */
 
 section p span {
-  font-family: 'Cutive mono', monospace;
+  font-family: 'Cutive mono', Courier;
   font-size: 2em;
 }
 
