@@ -5,11 +5,13 @@ html, body {
   height:100%;
 }
 img {
-  display: inline-block;
+  display: block;
   border-radius: 12px;
   border-color: #bc1e1b;
   width: 100%;
   max-width: 20em;
+  margin-left: auto;
+  margin-right:auto;
 }
 .resize {
   max-width: 45em;
