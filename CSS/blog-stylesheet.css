@@ -9,14 +9,10 @@ img {
   border-radius: 12px;
   border-color: #bc1e1b;
   width: 100%;
-  max-width: 40em;
+  max-width: 20em;
 }
 .resize {
-  display: inline-block;
-  border-radius: 12px;
-  border-color: #bc1e1b;
-  width: 100%;
-  max-width: 22em;
+  max-width: 45em;
 }
 h2 {
   color: black;
