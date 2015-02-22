@@ -20,13 +20,13 @@
     </p>
 
     <p>
-      <h3>Boolean states, objects and the infamous 'nil'</h3>
+      <h3>Boolean states</h3>
       One idea that was solidified in this section 5 of Chapter 7 was that every object in Ruby has a Boolean value of either 'true' or 'false'. And every single expression will evaluate to an object that will fall in one of those two Boolean categories. That's something I suspected, but wasn't entirely convinced. Also, 'nil' evaluates to the object 'false'.
       <blockquote class="ruby">
         if "pigs can fly"<br>
-          puts "yeah we all know pigs fly"<br>
+        &nbsp;&nbsp;puts "yeah we all know pigs fly"<br>
         else<br>
-          puts "no pigs can't fly, dumbA$$"<br>
+        &nbsp;&nbsp;puts "no, pigs can't fly, dumbA$$"<br>
         end<br>
         <br>
         => "yeah we all know pigs fly"
@@ -42,7 +42,7 @@
       If the left-hand object being compared is greater than the right-hand object the expression will return 1. If the right-hand object is greater than the left-hand object the value returned will be -1.
       If both objects are equal the returned value will be 0.
       Here's a short example:
-      <blockquote ="ruby">
+      <blockquote class="ruby">
         4 <=> 3<br>
         => 1<br>
 
@@ -99,7 +99,7 @@
     </p>
 
     <p>
-      <h3>Collection Handling with Arrays</h3>
+      <h3>Arrays</h3>
       One cool thing I learned about Arrays were that when creating a new Array you can pass some arguments to the array and even include a block of code. Examples:
       <blockquote class="ruby">
         Array.new(5, "hello")<br>
@@ -117,6 +117,7 @@
       Hashes have, so far, seemed to be a lot more involved to create than Arrays, and yet there is a method for creating hashes that's kinda array-like. Example:
       <blockquote class="ruby">
         new_hash = Hash["key", "value", "street", "halsey st", "city", "brooklyn", "phone", "212-123-REAL"]<br>
+        <br>
         => {"key"=>"value", "street"=>"halsey st", "city"=>"brooklyn", "phone"=>"212-123-REAL"}
       </blockquote>
       If you start with Hash[] and make sure the 'arguments', which look a lot like creating an array are an even number in total then you can create a Hash in a way that I feel is personally much quicker than using the '=>' and comma technique. However, every technique has it's place.

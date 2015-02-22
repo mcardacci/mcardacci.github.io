@@ -52,7 +52,9 @@ main {
   border-radius: 1px;
   padding: 5px;
   color: rgba(200, 210, 200, 0.9);
-  font-size: 0.9em;
+  font-size: 0.75em;
+  line-height: 1.5em;
+  text-align: left;
 }
 
 .comment {
