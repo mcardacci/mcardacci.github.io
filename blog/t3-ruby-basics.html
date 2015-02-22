@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+  <title>TITLE</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+  <link href='http://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
+</head>
+
+<main>
+  <div class="blog-header">
+    <h1>TITLE</h1>
+    <h2>SUBTITLE</h2>
+    <h4>DATE</h4>
+  </div>
+
+  <section class="blog-post">
+    <p>
+      "The Well Grounded Rubyist" by David A. Black has helped take my Ruby understanding up a notch, and it was very low before. I usually gravitate to tutorials or one-on-one help when it comes to learning these sorts of things, but this book really prodcued great results for me. I'm going to go over what I've learned so far from some of the sections in the book. I still have more than half of the book to go through, but writing this down will help to solidify the knowledge in my own mind.
+
+      <h3>Boolean states, objects and the infamous 'nil'</h3>
+      One idea that was solidified in this section 5 of Chapter 7 was that every object in Ruby has a Boolean value of either 'true' or 'false'. And every single expression will evaluate to an object that will fall in one of those two Boolean categories. That's something I suspected, but wasn't entirely convinced. Also, 'nil' evaluates to the object 'false'.
+      <blockquote>
+        if "pigs can fly"<br>
+          puts "yeah we all know pigs fly"<br>
+        else<br>
+          puts "no pigs can't fly, dumbA$$"<br>
+        end<br>
+        <br>
+        => "yeah we all know pigs fly"
+      </blockquote>
+
+      <blockquote>"pigs can fly" == true</blockquote> no matter what you've heard.
+
+      <h3>Comparisons</h3>
+      The 'spaceship operator' <=> is a very useful comparison device.
+      If the left-hand object being compared is greater than the right-hand object the expression will return 1. If the right-hand object is greater than the left-hand object the value returned will be -1.
+      If both objects are equal the returned value will be 0.
+      Here's a short example:
+      <blockquote>
+        4 <=> 3<br>
+        => 1<br>
+
+        4 <=> 300<br>
+        => -1<br>
+
+        434 <=> 434<br>
+        => 0
+      </blockquote>
+
+      <h3>Strings</h3>
+      One really cool thing that I took away from this section on Strings is the multiple ways you can create a String object in Ruby. The strangest and most interesting way in my mind is %q which makes a single quoted string and %Q which makes a double quoted string. The coolest and, probably, most confusing aspect is that the delimiter can be (almost) anything as long as you open and close the string with the same delimiter. Example:
+      <blockquote>
+        %q{hello world, how are you?}<br>
+        => "hello world, how are you?"<br>
+        <br>
+        %q*hi world, please answer me!*<br>
+        => "hi world, please answer me!"<br>
+        <br>
+        %Q-ok world, whatever-<br>
+        => "ok world, whatever"
+      </blockquote>
+
+      Even though the first two strings return with double-quotes when they are evaluated they have single-quotes same as if you were to create a string:
+
+      <blockquote>
+        'hello'<br>
+        => "hello"
+      </blockquote>
+
+      <h3>Numerical Objects</h3>
+      What interested me a lot about Numerical objects and, actually, more specifically the arithmetic operators that you would use to perform mathematical calculations are actually methods like any other method in Ruby and can be written that way too. Example:
+
+      <blockquote>
+        4 + 3<br>
+        => 7<br>
+        <br>
+        4.+(3)<br>
+        => 7
+        4.*(3)<br>
+        => 12<br>
+      </blockquote>
+
+      It doesn't look as clean at all, but still might be important to understand that they are methods, but with the special ability to be written differently than other methods.
+
+      <h3>Arrays and Hashes</h3>
+      I wrote a whole <a href="t3-arrays-hashes.html">blog post</a> on my comparison between Arrays and Hashes, but I'll touch on one thing I learned after writing that blog post. I already knew about iterating over arrays and identifying current index number by using the method each_with_index, but what's interesting about hashes. They can also use the same method to identify the key=>value pair index which does have a numerical value. This numerical value represents the index of the pair not the individual key or value.
+
+      <h3>Collection Handling with Arrays</h3>
+      One cool thing I learned about Arrays were that when creating a new Array you can pass some arguments to the array and even include a block of code. Examples:
+      <blockquote>
+        Array.new(5, "hello")<br>
+        => ["hello", "hello", "hello", "hello", "hello"]<br>
+        <br>
+        number = 6<br>
+        Array.new(5) {number -= 1}<br>
+        => [5, 4, 3, 2, 1]
+      </blockquote>
+      These are very helpful ways to add content to arrays at the time of initializing. The first method will create the same object however many times you indicate. The second method creates separate objects and runs the code block however many times you indicate in the method argument, (5 times in this example) and places the entire code block evaluated into each slot of the array.
+
+      <h3>Hashes</h4>
+      Hashes have, so far, seemed to be a lot more involved to create than Arrays, and yet there is a method for creating hashes that's kinda array-like. Example:
+      <blockquote>
+        new_hash = Hash["key", "value", "street", "halsey st", "city", "brooklyn", "phone", "212-123-REAL"]<br>
+        => {"key"=>"value", "street"=>"halsey st", "city"=>"brooklyn", "phone"=>"212-123-REAL"}
+      </blockquote>
+      If you start with Hash[] and make sure the 'arguments', which look a lot like creating an array are an even number in total then you can create a Hash in a way that I feel is personally much quicker than using the '=>' and comma technique. However, every technique has it's place.
+
+      <h3>Ranges</h3>
+      Ranges are fun to make. For some reason I really enjoy it. You can easily create an array with (1..100).to_a
+      That will create an array with 100 values: index 0 equaling 1 and index 99 equaling 100.
+      The two main things that can cause confusing with ranges are whether or not they are inclusive or exclusive:
+      For some reason I remembered that fairly quickly, but I don't really have a technique I could share:
+      1..100 will end on 100
+      1...100 will end on 99
+      I guess it just seems more inclusive with two dots than three.
+
+      I'm learning more and more Ruby each day and hope to finish this amazing book by David A. Black.
+      Please get yourselves a copy. I couldn't wait for shipping so I bought the digital version.
+      You can buy the book here: <a href="http://www.manning.com/black3/">The Well Grounded Rubyist (updated for Ruby 2.1)</a>
+    </p>
+  </section>
+</main>
