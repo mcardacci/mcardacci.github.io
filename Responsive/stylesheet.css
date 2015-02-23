@@ -1,0 +1,82 @@
+@media screen and (max-width: 900px) {
+  div #side-a {
+    margin: 0px auto;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+  #side-a li {
+    margin: 0px;
+    padding: 0px;
+    font-size: 90%;
+    display: inline-block;
+  }
+
+  div #content {
+    margin: 0px auto;
+    float: none;
+  }
+
+  p {
+    text-align: center;
+  }
+
+}
+
+
+#wrapper {
+  text-align: left;
+  margin: 0px auto;
+  padding: 0px;
+  border:0;
+  width: 100%;
+  background: url("http://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-6-full.jpg") repeat;
+  color:black;
+  font-size: 2em;
+}
+
+#side-a ul{
+  list-style-type:none;
+  padding: 0px;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color:black;
+}
+
+#header {
+  width: 100%;
+  margin: 0 0 1.5625% 0;
+  background: black;
+  color: white;
+}
+
+#side-a {
+  float: left;
+  width: 15.625%;
+}
+
+#side-a li{
+  padding-top: 2.08333%;
+}
+
+#side-b {
+  float: right;
+  width: 15.625%;
+}
+
+#content {
+  float: left;
+  width: 68%;
+}
+
+#footer {
+  clear: both;
+  width: 100%;
+  background: #A2A2A2;
+}
