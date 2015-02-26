@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+  <title>group_by.badassness?</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+  <link href='http://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
+</head>
+
+<main>
+  <div class="blog-header">
+    <h1>group_by.badassness?</h1>
+    <h2>=> true</h2>
+    <h4>February 26, 2015</h4>
+  </div>
+
+  <section class="blog-post">
+    <p>
+      Ruby's group_by method when looking at Ruby Docs is kinda cool, and after a little research, and some thinking I have come up with a few good uses for this method.<br>
+      <br>
+      Basically what group_by does is take a collection and return a Hash with the key being the evaluated code block and the values being an array that contains the objects from the original collection that fall in each key (category). The name of the method screams that it would make sense when trying to group items together not just label individual items, and so let's look at some possible examples.
+    </p>
+
+    <blockquote class="ruby">
+      (1..50).group_by do |n|     <br>
+        if n < 15                 <br>
+          "Less than 15"          <br>
+        elsif n > 14 && n <= 30   <br>
+          "Between 15 and 30"     <br>
+        else                      <br>
+          "Greater than 30"       <br>
+        end                       <br>
+      end                         <br>
+                                  <br>
+      => {"Less than 15"=>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "Between 15 and 30"=>[15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30], "Greater than 30"=>[31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]}
+    </blockquote>
+
+    <p>
+      This example is simple but it can definitely spark some inspiration for using group_by in a situation that can be really use that style of grouping. Another example would be grouping certain objects alphabetically or by the amount of times a certain letter is found in a collection of Strings. Let's try that second example out.
+    </p>
+
+    <blockquote class="ruby">
+      motorcycle_brands =             <br>
+        [                             <br>
+        'Moto Guzzi',                 <br>
+        'Harley-Davidson',            <br>
+        'Honda',                      <br>
+        'Yamaha',                     <br>
+        'Royal Enfield',              <br>
+        'Norton',                     <br>
+        'Suzuki',                     <br>
+        'Cleveland CyclewWerks',      <br>
+        'Ducati',                     <br>
+        'Triumph'                     <br>
+        ]                             <br>
+                                      <br>
+      motorcycle_brands.group_by {|brand| brand.count('a')}       <br>
+                                                                  <br>
+      => {0=>["Moto Guzzi", "Norton", "Suzuki", "Triumph"], 2=>["Harley-Davidson"], 1=>["Honda", "Royal Enfield", "Cleveland CyclewWerks", "Ducati"], 3=>["Yamaha"]}
+    </blockquote>
+
+    <p>
+      So in this example we are grouping a collection of motorcycle brands by how many 'a' characters they have in their name. This is obviously the best way to shop for bikes. The less 'a' characters the better is the unspoken rule. Shockingly, this program actually isn't useful at all in that area, but you can still see the possibilities. If any of you have any cool ways to use group_by, and you think I should include them in this post please let me know! Have fun. Be safe.
+    </p>
+  </section>
+</main>
