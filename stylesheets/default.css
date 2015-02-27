@@ -49,6 +49,11 @@ div.right {
   float: right;
 }
 
+#contain #left header a h1 {
+  font-family: 'Quicksand', sans-serif;
+  color: rgba(34, 78, 60, 0.9);
+}
+
 header {
   font-size: 0.8em;
   width: 60%;
@@ -120,7 +125,7 @@ footer {
 /* Main section */
 
 section p span {
-  font-family: 'Cutive mono', Courier2;
+  font-family: 'Cutive mono', Courier;
   font-size: 2em;
 }
 

@@ -1,10 +1,14 @@
-* {
-  font-family: 'Cutive mono', monospace;
+body {
+  padding-bottom: 10%;
 }
 
-main {
-  margin-top: 5em;
-  margin-bottom: 5em;
+#contain #left header a h1 {
+  font-family: 'Quicksand', sans-serif;
+  color: rgba(34, 78, 60, 0.9);
+}
+
+#main *  {
+  font-family: 'Cutive Mono', monospace;
 }
 
 .blog-header {
