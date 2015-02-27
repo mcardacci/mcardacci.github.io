@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cardacci</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A blog about becoming a software developer by Marc Cardacci">
+  <link rel="stylesheet" type="text/css" href="../CSS/blog-stylesheet.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ <link href='https://fonts.googleapis.com/css?family=Oswald|Exo:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <header>
+    <h1 class="title">Marc Cardacci <br> <span>(A blog about becoming a software developer.)</h1>
+      <div class="top-nav">
+        <ul>
+          <a href="../index.html">
+            <li>
+                <i class="fa fa-home fa-2x"></i>
+                <br>
+                Home
+            </li>
+          </a>
+          <a href="../index.html">
+            <li>
+              <i class="fa fa-street-view fa-2x"></i>
+                <br>
+                About
+            </li>
+          </a>
+          <a href="archive.html">
+            <li>
+              <i class="fa fa-newspaper-o fa-2x"></i>
+                <br>
+                Archive
+              </li>
+          </a>
+          <a href="#">
+              <li>
+                <i class="fa fa-search fa-2x"></i>
+                  <br>
+                  Search
+              </li>
+          </a>
+        </ul>
+      </div>
+  </header>
+<div class="horizontal-line">
+    <div class="blog-content">
+        <h4>2/27/15</h4>
+        <h1>Object Mapping</h1>
+          <p>
+           This is a brief introduction to the #map method. I will attempt to explain a bit about what goes on under #map's hood. So lets dive in with some basic examples:
+          </p>
+          <img src="../IMG/map_one.png">
+          <p>
+          As you can see the #map method iterates over each index or key/value pair and <b>makes a copy</b> based on the evaluation inside the code block. #map is one of the many useful methods that belong to the Enumerable module. One important note: the #collection method is a synonym for the #map method. The Enumerable module is a group of methods designed for working on collections. Enumerable methods can be called on enumerable classes such as Hash, Array, Set, Range and more. Enumerable methods can also be 'mixed-in' a class but thats another blog for another time.
+          <br>
+          #map looks and smells like #each so what's the difference?
+        </p>
+         <img src="../IMG/map_two.png">
+          <p>
+            What's happening? If we look at the different object_id's we'll notice the method is returning a copy of the collection it's sending messages to. #map simply returns the transformed collection.
+          </p>
+          <p>
+            If we want to #map to permanently modify an array, theres no need to change methods. It's more exclamatory brother can be put to work:
+          </p>
+          <img src="../IMG/map_three.png">
+          <p>
+            Alright well that's all for now. Send me a message on twitter or contact me here!
+          </p>
+          <h2>References:</h2>
+          <p><a href="http://ruby.bastardsbook.com/chapters/enumerables/">http://ruby.bastardsbook.com/chapters/enumerables/</a><br>
+          <a href="http://www.slideshare.net/harisamin/the-enumerable-module-or-how-i-fell-in-love-with-ruby">www.slideshare.net/harisamin</a>
+          </p>
+    </div>
+  <div class="horizontal-line">
+    <footer>
+      <ul class="footer-icons">
+        <a href="https://github.com/mcardacci/">
+              <li class="bottom-icon">
+                <i class="fa fa-github fa-2x"></i>
+              </li>
+          </a>
+        <a href="https://twitter.com/MarcCardacci">
+              <li class="bottom-icon">
+                <i class="fa fa-twitter fa-2x"></i>
+              </li>
+          </a>
+        <a href="https://www.facebook.com/profile.php?id=100008146878953">
+              <li class="bottom-icon">
+                <i class="fa fa-facebook fa-2x"></i>
+              </li>
+          </a>
+        <a href="https://www.linkedin.com/profile/view?id=383416184&trk=nav_responsive_tab_profile">
+              <li class="bottom-icon">
+                <i class="fa fa-linkedin-square fa-2x"></i>
+              </li>
+          </a>
+      </ul>
+      <p>Copyright © Marc Cardacci 2015</p>
+    </footer>
+  </div>
+</body>
+</html>
