@@ -94,8 +94,13 @@ h3 {
 }
 
 #navigation {
-  padding-top: 210px;
+  padding-top: 230px;
+  padding-bottom: 230px;
   text-align: center;
+}
+
+#navigation i {
+  position: fixed;
 }
 
 
