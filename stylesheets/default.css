@@ -169,38 +169,47 @@ ul#navigation a {
 
 p#home span:nth-child(1) {
   font-size: 370%;
+  opacity: 0.9;
 }
 
 p#home span:nth-child(3) {
   font-size: 240%;
+  opacity: 0.8;
 }
 
 p#home span:nth-child(5) {
   font-size: 290%;
+  opacity: 0.7;
 }
 
 p#home span:nth-child(7) {
   font-size: 210%;
+  opacity: 0.6;
 }
 
 p#home span:nth-child(9) {
   font-size: 150%;
+  opacity: 0.5;
 }
 
 p#home span:nth-child(11) {
   font-size: 130%;
+  opacity: 0.4;
 }
 
 p#home span:nth-child(13) {
   font-size: 100%;
+  opacity: 0.3;
 }
 
 p#home span:nth-child(15) {
   font-size: 70%;
+  opacity: 0.2;
 }
 
 p#home span:nth-child(17) {
   font-size: 50%;
+  opacity: 0.1;
 }
 
 
