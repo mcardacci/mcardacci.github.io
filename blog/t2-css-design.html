@@ -1,58 +1,98 @@
 <!DOCTYPE html>
-<head>
-  <title>Absolutely Not Your Relative</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
-  <link href='https://fonts.googleapis.com/css?family=Cutive+Mono%7CQuicksand:300,400,700' rel='stylesheet' type='text/css'>
-</head>
-<body>
-  <div class="contain">
-    <div class="left">
-      <header>
-        <a href="../index.html">
-          <h1>aceburgess<span id="github">.github.io</span></h1>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+    <link rel="stylesheet" href="../fonts/font-awesome/css/font-awesome.min.css">
+    <title>Absolutely Not Your Relative | A. Burgess</title>
+  </head>
+  <body>
+    <div class="grid grid-pad">
+      <div class="col-2-3 header">
+        <header>
+          <h1><span>aceburgess</span> .github.io</h1>
+        </header>
+      </div>
+
+      <div class="col-1-1 mobile_break">
+      </div>
+
+      <div class="col-1-3 header twitter">
+        <a href="https://twitter.com/aceburgess">
+          <i class="fa fa-twitter fa-lg"></i>
         </a>
-      </header>
-    </div>
-    <div class="right">
-        <a id="social-media" href="http://www.twitter.com/aceburgess"><img id="twitter" src="../imgs/twitter-min.png" alt="Twitter"></a>
-    </div>
-  </div>
+      </div>
 
-  <main id="main">
-    <div class="blog-header">
-      <h1>Absolutely Not Your Relative</h1>
-      <h2>A self-needed explanation on the differences between<br>Absolute, Relative, Fixed, & Static positioning in CSS.</h2>
-      <h4>February 13th 2015</h4>
-    </div>
+      <div class="col-1-1 desktop_break">
+        <!--Keeps Content and sidebar below Header-->
+      </div>
 
-    <section class="blog-post">
-      <p>
-        The reason I'm writing about positioning in CSS is because I want to actually try and understand it myself. I've only been really exposed to learning CSS in the last week, and I'm really excited with the amazing things it's capable of.
-      </p>
-      <p>
-        So let's start with the default attribute for every element on the page. That is 'Static'. I just found out 5 minutes ago that the only reason you would ever want to use 'Static' is if you have to forcefully remove some positioning that was applied to an element that is out of your control. Gonna go delete a few lines of code now. Just kidding, I've never used 'Static' before, but I guess all it means is that the element you are working on will flow into the page as it normally would.
-      </p>
-      <p>
-        Now for 'Relative' positioning, the most mysterious to me. From what I've read it looks like 'Relative' positioning is basically the same as 'Static' positioning if you don't also apply some positioning attributes to the element. Like "top: 4px; left: 8px" etc. When you DO apply those attributes of positioning, the element will position itself relative to where it would have been if it were still a 'Static' element. At the same time, by making an element 'Relative' you are allowing it to use a z-index on that element which will enables you to decide which elements are in front of or behind other elements visually. Finally, by making an element have 'Relative' positioning you are also limiting the scope of any child element with 'Absolute' positioning enabled. We will get into 'Absolute' positioning next.
-      </p>
-      <p>
-        'Absolute' positioning allows the placement of an element anywhere on the page and it's positioning is set by the 'top', 'bottom', 'left', and 'right' attributes. The element that is set to 'Absolute' positioning is relative to the html element itself, meaning the entire page, or if it is nested within another element and that element has 'Relative' or 'Absolute' positioning it will be positioned relative to that element. Elements positioned using the 'Absolute' value will not be affected by, or affect, other elements on the page. This can be useful or pose problems depending on how it's implemented.
-      </p>
-      <p>
-        Finally, 'Fixed' positioning, when used on an element, makes that element's position relative to the browser window only. So no matter how long or wide the page is the element will stay in one position as all other elements move around behind it. This one is harder for me to put into words, but if you've seen a navigation bar that stays put on the side even as you scroll down the whole page then there is a possibility that 'Fixed' positioning was used.
-      </p>
-      <p>
-        This is all the information I have for now on this topic. I've learned more from the research of this post than I could ever imagine. I hope this helps anyone that comes across this, but I'd also like to point out an article that really helped me understand the position attribute a little better.
-      </p>
-      <p>
-        Here's one of the most helpful posts I've found:
-        <a href="http://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/">Absolute, Relative, and Fixed Postioning. How do they differ? by Chris Coyier</a>
-      </p>
-      <p id="edit">
-        <!-- EDIT -->
-      </p>
-    </section>
-  </main>
-</body>
+      <div class="col-1-3 sidebar">
+        <nav onclick="">
+          <div class="module back">
+           <a href="#"><i class="fa fa-chevron-left fa-lg"></i></a><z></z>
+          </div>
+
+          <div class="module nav">
+            <ul id="navigation">
+              <li><a href="../index.html">TAKE ME BACK HOME NOW!</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="col-1-1 mobile_break">
+      </div>
+
+      <div class="col-2-3 content">
+        <main id="entire-blog">
+          <div class="blog-header">
+            <h1>Absolutely Not Your Relative</h1>
+            <h2>A self-needed explanation on the differences between<br>Absolute, Relative, Fixed, & Static positioning in CSS.</h2>
+            <h4>February 13th 2015</h4>
+          </div>
+
+          <section class="blog-post">
+            <p>
+              The reason I'm writing about positioning in CSS is because I want to actually try and understand it myself. I've only been really exposed to learning CSS in the last week, and I'm really excited with the amazing things it's capable of.
+            </p>
+            <p>
+              So let's start with the default attribute for every element on the page. That is 'Static'. I just found out 5 minutes ago that the only reason you would ever want to use 'Static' is if you have to forcefully remove some positioning that was applied to an element that is out of your control. Gonna go delete a few lines of code now. Just kidding, I've never used 'Static' before, but I guess all it means is that the element you are working on will flow into the page as it normally would.
+            </p>
+            <p>
+              Now for 'Relative' positioning, the most mysterious to me. From what I've read it looks like 'Relative' positioning is basically the same as 'Static' positioning if you don't also apply some positioning attributes to the element. Like "top: 4px; left: 8px" etc. When you DO apply those attributes of positioning, the element will position itself relative to where it would have been if it were still a 'Static' element. At the same time, by making an element 'Relative' you are allowing it to use a z-index on that element which will enables you to decide which elements are in front of or behind other elements visually. Finally, by making an element have 'Relative' positioning you are also limiting the scope of any child element with 'Absolute' positioning enabled. We will get into 'Absolute' positioning next.
+            </p>
+            <p>
+              'Absolute' positioning allows the placement of an element anywhere on the page and it's positioning is set by the 'top', 'bottom', 'left', and 'right' attributes. The element that is set to 'Absolute' positioning is relative to the html element itself, meaning the entire page, or if it is nested within another element and that element has 'Relative' or 'Absolute' positioning it will be positioned relative to that element. Elements positioned using the 'Absolute' value will not be affected by, or affect, other elements on the page. This can be useful or pose problems depending on how it's implemented.
+            </p>
+            <p>
+              Finally, 'Fixed' positioning, when used on an element, makes that element's position relative to the browser window only. So no matter how long or wide the page is the element will stay in one position as all other elements move around behind it. This one is harder for me to put into words, but if you've seen a navigation bar that stays put on the side even as you scroll down the whole page then there is a possibility that 'Fixed' positioning was used.
+            </p>
+            <p>
+              This is all the information I have for now on this topic. I've learned more from the research of this post than I could ever imagine. I hope this helps anyone that comes across this, but I'd also like to point out an article that really helped me understand the position attribute a little better.
+            </p>
+            <p>
+              Here's one of the most helpful posts I've found:
+              <a href="http://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/">Absolute, Relative, and Fixed Postioning. How do they differ? by Chris Coyier</a>
+            </p>
+            <p id="edit">
+              <!-- EDIT -->
+            </p>
+          </section>
+        </main>
+      </div>
+
+      <div class="col-1-1 mobile_break">
+      </div>
+
+      <div class="col-1-1">
+        <footer>
+          <p>© Copyright 2015 | Ace Elijah Burgess</p>
+        </footer>
+      </div>
+
+    </div>
+  </body>
+</html>
