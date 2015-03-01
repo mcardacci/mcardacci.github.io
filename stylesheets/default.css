@@ -263,7 +263,8 @@ and (max-width: 480px) {
     padding-bottom: 30px;
     left: 20px;
     right: 20px;
-    background: rgba(250,248,240,0.98);
+    background: rgba(250,248,240,1);
+    z-index: 3;
     border-radius: 20px
   }
 
@@ -300,7 +301,7 @@ and (min-width: 481px) {
 and (max-width: 770px)
 and (min-width: 481px) {
 
-  ul#blog li {
+  .blog_list #blog {
     display: none;
   }
 
@@ -315,6 +316,16 @@ and (min-width: 481px) {
   .content {
     width: 66.66%;
     margin-right: 0;
+  }
+
+  .blog_list:hover #blog, blog_list:focus #blog {
+    display: block;
+    position: absolute;
+    margin-top: -20px;
+    padding: 10px;
+    background: rgba(250,248,240,1);
+    z-index: 3;
+    border-radius: 10px
   }
 }
 
