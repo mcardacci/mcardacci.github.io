@@ -103,6 +103,16 @@ h3 {
   position: fixed;
 }
 
+@media only screen
+and (max-height: 580px) {
+
+  #navigation i {
+    padding-top: 0;
+    padding-bottom: 0;
+    top: 50%;
+  }
+
+}
 
 /*
 body {
