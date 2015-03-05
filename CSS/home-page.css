@@ -12,9 +12,126 @@ body:before {
   z-index: -1;
   top: 0;
   left: 0;
+  background: #0e0e0e; /* If no gradient support */
   background: -webkit-radial-gradient(center, ellipse cover, rgba(12,61,166,0.35) 20%,rgba(0,0,0,2.0) 70%);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(12,61,166,0.35) 20%,rgba(0,0,0,2.0) 70%); /* FF3.6+ */
+  background: -webkit-gradient(center, ellipse cover, rgba(12,61,166,0.35) 20%,rgba(0,0,0,2.0) 70%); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(12,61,166,0.35) 20%,rgba(0,0,0,2.0) 70%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, rgba(12,61,166,0.35) 20%,rgba(0,0,0,2.0) 70%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, rgba(12,61,166,0.35) 20%,rgba(0,0,0,2.0) 70%); /* IE10+ */
+  background: radial-gradient(center, ellipse cover, rgba(12,61,166,0.35) 20%,rgba(0,0,0,2.0) 70%); /* W3C */
 }
-h1 {
+.name {
+  font-size: 2em;
   color: white;
   font-family: 'Oxygen', sans-serif;
 }
+h2 {
+  font-size: 1.5em;
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+}
+p {
+  color: white;
+  padding: 10px 5px 0;
+  margin: 0 30px;
+  font-size: 12px;
+  border-top: 1px solid rgba(255,255,255,0.5);
+}
+.front-of-node {
+  background-color: #666666;
+  height: 1em;
+  width: 1em;
+}
+
+.node-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  cursor: default;
+}
+
+.info-wrap,
+.info{
+  position: absolute;
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+}
+
+.info-wrap {
+  top: 20px;
+  left: 20px;
+  background: #8a1515 url(../IMG/spock.png);
+  box-shadow: 0 0 0 20px rgba(255,255,255,0.2), inset 0 0 3px rgba(115,114, 23, 0.8);
+}
+.info > div {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-position: center center;
+}
+.info .front-of-node {
+  transition: all 0.6s ease-in-out;
+}
+.info .back-of-node {
+  opacity: 0;
+  background: #8a1515;
+  pointer-events: none;
+  transform: scale(1.5);
+  transition: all 0.4s ease-in-out 0.2s;
+}
+
+.info h3 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 18px;
+  margin: 0 15px;
+  padding: 40px 0 0 0;
+  height: 80px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0,0,0,0.3);
+}
+.node-container:hover .front-of-node {
+  transform: scale(0);
+  opacity: 0;
+}
+.node-container:hover .back-of-node {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+/*.node-div {
+width:200px; height:150px;
+position:relative;
+-webkit-transform-style: reserve-3d;
+-webkit-transform-origin: 100% 75px;
+-webkit-transition: all 0.7s ease;
+-moz-transition: all 0.7s ease;
+-o-transition: all 0.7s ease;
+transform-style: preserve-3d;
+transform-origin: 100% 130px;
+transition: all 0.7s ease;
+}
+.node-container:hover .node-div {
+-webkit-transform: rotateX(-180deg);
+transform: rotateX(-180deg);
+}
+.front-of-node, .back-of-node {
+width:200px;
+height:150px;
+position:absolute; left:0;
+-webkit-backface-visibility:hidden;
+backface-visibility:hidden;
+}
+.back-of-node {
+padding-top:50px;
+-webkit-transform: rotateX(180deg);
+transform: rotateX(180deg);
+}
+*/
