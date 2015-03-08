@@ -1,14 +1,16 @@
 body {
   background: url(../IMG/bulge-node.png);
-  margin: 0;
-  padding: 0;
+  margin: 1em;
+  padding-top: 2em;
+  padding-left: 1em;
+
 }
 
 body:before {
   content: " ";
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   top: 0;
   left: 0;
@@ -22,14 +24,18 @@ body:before {
   background: radial-gradient(center, ellipse cover, rgba(12,61,166,0.35) 20%,rgba(0,0,0,2.0) 70%); /* W3C */
 }
 .name {
+  display: block;
+  top:2em;
   font-size: 2em;
   color: white;
   font-family: 'Oxygen', sans-serif;
 }
 h2 {
-  font-size: 1.5em;
+  font-size: 1.45em;
   color: white;
   font-family: 'Oxygen', sans-serif;
+  text-align: center;
+  padding-top: .6em;
 }
 p {
   color: white;
@@ -39,7 +45,7 @@ p {
   border-top: 1px solid rgba(255,255,255,0.5);
 }
 .front-of-node {
-  background-color: #666666;
+  background-color: #5e5d5d;
   height: 1em;
   width: 1em;
 }
@@ -48,24 +54,42 @@ p {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  position: relative;
   box-shadow: 0 1px 2px rgba(0,0,0,0.1);
   cursor: default;
 }
+.blog {
+position:relative;
+left: 20%;
+top: 7em;
+}
+.about {
+position:relative;
+left:50%;
+top: 15em;
+}
+.projects {
+position: relative;
+left: 50%;
+bottom: 1em;
+}
+.contact {
+position:relative;
+left:27%;
+top: 24em;
 
+}
 .info-wrap,
 .info{
   position: absolute;
-  width: 8em;
-  height: 8em;
+  width: 7em;
+  height: 7em;
   border-radius: 50%;
 }
 
 .info-wrap {
   top: 20px;
   left: 20px;
-  background: #8a1515 url(../IMG/spock.png);
-  box-shadow: 0 0 0 20px rgba(255,255,255,0.2), inset 0 0 3px rgba(115,114, 23, 0.8);
+  box-shadow: 0 0 0 20px rgba(255,255,255,0.2), inset 0 0 2px rgba(115,114, 23, 0.4);
 }
 .info > div {
   display: block;
@@ -80,22 +104,10 @@ p {
 }
 .info .back-of-node {
   opacity: 0;
-  background: #8a1515;
+  background:black;
   pointer-events: none;
   transform: scale(1.5);
   transition: all 0.4s ease-in-out 0.2s;
-}
-
-.info h3 {
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 18px;
-  margin: 0 15px;
-  padding: 40px 0 0 0;
-  height: 80px;
-  font-family: 'Open Sans', Arial, sans-serif;
-  text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0,0,0,0.3);
 }
 .node-container:hover .front-of-node {
   transform: scale(0);
@@ -106,6 +118,7 @@ p {
   opacity: 1;
   pointer-events: auto;
 }
+/*experiment gone terribly wrong*/
 /*.node-div {
 width:200px; height:150px;
 position:relative;
