@@ -4,6 +4,7 @@
   <title>Cardacci</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width">
   <meta name="description" content="A blog about becoming a software developer by Marc Cardacci">
   <link rel="stylesheet" type="text/css" href="../CSS/blog-stylesheet.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -48,21 +49,142 @@
   </header>
 <div class="horizontal-line">
     <div class="blog-content">
-        <h4>1/20/15</h4>
-        <h1>Phase 0 Week 1</h1>
+        <h4>3/6/15</h4>
+        <h1>Ruby Class and Inheritance</h1>
           <p>
-            Ok I've got my mug of coffee and 'Music For Airports' playing in the background. Let's do this.
+
           </p>
           <p>
-            In my past I had experience in HTML5 and CSS3 and now I feel sufficiently brushed up. We had to make our own website from scratch about ourselves. It's refreshing being overloaded with all this information. Up until this week, most of my focus had been on JavaScript but already DBC has made my mind implode. I like to organize things in my free time and Git is exactly the tool that I've been looking for. In a mere couple days you learn this:
-          </p>
-            <img src="../IMG/Git_Data_Transport_Commands.png">
-          <p>
-            Welcome to Git, a version control system that allows you to track the history of all the changes you've made to your program files. People and companies alike use Git for just about any type of file. Be it an old family recipe or a web application it's uses can vary widely.
+            Before I started programming, I viewed my life as a series of connected events that occurred one after the other in time. Inside the universe of a program however, there exists a model of the real world. In an object-oriented programming language, objects communicate with one another. These objects are very similar to the way people, places and things communicate on planet earth.
           </p>
           <p>
-            But back to DBC, their approach to learning is awesome. I enjoy challenging myself and the curriculum throws you in the deep end with weights tied around your feet. When you're sinking, your classmates are there to keep you from drowning. They literally feed you a ton of new information every week. I can tell this is going to be a dynamic experience. I can feel all the synapses firing, my brain is starting to morph. I'm signing off. Until next time.
+            In Ruby, the 'Class' container organizes objects and methods. Methods are the mode of communication objects use to talk to one another.  Inside these methods are properties called instance variables. Instance variables get passed down like a human mother passes genes to her children. They are distinguished by the '@' symbol at the beginning of their label.
           </p>
+          <p>
+            Lets create a simple class structure built on alien life forms.
+          </p>
+          <pre>
+              class Alien
+                  def initialize
+                  end
+
+                  def feed
+                  end
+              end
+          </pre>
+          <p>
+            This is a basic arbitrary example meant to explain how objects mimic Alien life. 'Alien' in the example above, is the class from which all alien life is instantiated. We want to program Aliens to do two things; make babies, and eat. In order to give an alien life form properties when it's instantiated (created), we need to give it's initialize method properties and instance variables.
+          </p>
+          <pre>
+            <code>
+              class Alien
+                def initialize(name, age)
+                    @name = name
+                    @age = age
+                    @eye_color = "jaundice"
+                    @planet = "kukundu"
+                    @skin = "scales"
+                  end
+                def feed
+                    puts "consumes matter"
+                  end
+              end
+
+              child_alien = Alien.new("Frank", 12)
+              => @name="Frank", @age=12, @eye_color="jaundice", @planet="kukundu", @skin="scales">
+
+              child_alien.feed
+              => "consumes matter"
+            </code>
+          </pre>
+          <p>
+            Now when a new Alien, (child_alien) gets instantiated he is born with properties. It's name and age you have the ability to change. But this is pretty mundane so lets add to its structure a bit. In the following example, we're going to add a lot more functionality, including a parent class called AlienEnvironment that evaluates a temperature_convert method. Let's take a look.
+          </p>
+          <pre>
+            <code>
+              class AlienEnvironment
+                def temperature_convert
+                  rand(70) * Math::PI
+                end
+              end
+
+              class Alien < AlienEnvironment
+                @@life_form_ids = []
+                def initialize(name, age)
+                  @name = name
+                  @age = age
+                  @eye_color = "jaundice"
+                  @planet = "kukundu"
+                  @skin = "scales"
+                  @@life_form_ids << @name
+                end
+
+                def check_the_weather
+                  case temperature_convert
+                  when 100..1000
+                    p "Your bones will fry."
+                  when 40..99
+                    p "It's safe to go out."
+                  else
+                    p "It's way too cold to support life."
+                  end
+                end
+                def self.alien_ids()
+                  p "The total list of alien ids: #{@@life_form_ids}"
+                end
+                def feed
+                  puts "consumes matter"
+                end
+              end
+
+              child_alien = Alien.new("Fredrick", 12)
+              child_alien.check_the_weather #evaluates to one of the case statements
+              =>"Your bones will Fry"
+
+              wacky_alien = Alien.new("tom", 25)
+              Alien.alien_ids()
+              =>The total list of alien ids: [/"Fredrick"/, /"tom"/]
+            </code>
+          </pre>
+        <h1>Explanation</h1>
+          <ul>
+            <li>
+              &#8674; From top to bottom we have the AlienEnvironment class that prints out the current temperature on planet kukundu.
+            </li>
+            <br>
+            <li>&#8674;
+              The '<' symbol represents the Alien class inheriting all, (in this case 1) of its instance methods AlienEnvironment.
+            </li>
+            <br>
+            <li>&#8674;
+              Now we can call temperature_convert from an instance of the Alien class.
+            </li>
+            <br>
+            <li>&#8674;
+              You'll notice the presence of a '@@'. This signifies a class method. We can only access these types of methods through the class themselves, not their instances.
+            </li>
+            <br>
+              <ul>
+                <li>&#8674;
+                  Whenever an Alien gets instantiated now, it's name gets put into an array. This way we    can keep track of the different aliens on our planet.
+                </li>
+              </ul>
+              <br>
+            <li>&#8674;
+              The check_the_weather method evaluates the number given from the temperature_convert method in AlienEnvironment and prints a string if the number meets one of those conditions.
+            </li>
+            <br>
+            <li>&#8674;
+              self.alien_ids() provides us a way of reading the class method list '@@alien_ids()'
+            </li>
+          </ul>
+        <h1>Importance of Keeping Classes Single Responsibility</h1>
+        <p>
+          I thought I would mention this book I'm currently reading through, <i>Practical Object-Oriented Design in Ruby</i> from Sandy Metz, an excellent book on program design. She describes the behaviors of classes and methods in the architecture of an application. When classes aren't intricately tangled, they are easy to reuse. This means that you can select/use any method from a given class without having to manipulate or duplicate it's code. Keeping classes simple and controlling their entablements makes code that's not only easier for other programmers to read, but also easier to add on to.
+        </p>
+        <p>
+          That's all for now, thanks for reading!
+        </p>
     </div>
   <div class="horizontal-line">
     <footer>

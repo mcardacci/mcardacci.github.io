@@ -4,7 +4,9 @@ html, body {
   padding:0;
   height:100%;
 }
-
+@-ms-viewport {
+  width: device-width;
+}
 img {
   display: block;
   border-radius: 12px;
@@ -160,4 +162,25 @@ footer p {
 }
 #footer p {
   text-align: center;
+}
+
+pre {
+    /*code for word-wrapping, possibly useful later
+    white-space: pre-wrap;
+    white-space: moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;*/
+    padding: 0.1em 0.5em 0.3em 0.7em;
+    border-left: 11px solid #ccc;
+    margin: 1.7em 0 1.7em 0.3em;
+    overflow: auto;
+    width: 93%;
+    font-family: "Courier New", Courier, monospace, sans-serif;
+}
+li {
+  font-family: 'baskerville'
+}
+ul {
+  list-style-type: none;
 }
