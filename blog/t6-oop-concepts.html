@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+    <link rel="stylesheet" href="../fonts/font-awesome/css/font-awesome.min.css">
+    <title>Blocks, Procs, & Lambdas | A. Burgess</title>
+  </head>
+  <body>
+    <div class="grid grid-pad">
+      <div class="col-2-3 header">
+        <header>
+          <h1><span>aceburgess</span> .github.io</h1>
+        </header>
+      </div>
+
+      <div class="col-1-1 mobile_break">
+      </div>
+
+      <div class="col-1-3 header twitter">
+        <a href="https://twitter.com/aceburgess">
+          <i class="fa fa-twitter fa-lg"></i>
+        </a>
+      </div>
+
+      <div class="col-1-1 desktop_break">
+        <!--Keeps Content and sidebar below Header-->
+      </div>
+
+      <div class="col-1-3 sidebar">
+        <nav onclick="">
+          <div class="module back">
+           <a href="../index.html">
+            <i class="fa fa-chevron-left fa-lg"></i></a><z></z>
+          </div>
+
+          <div class="module nav">
+            <ul id="navigation">
+              <li>
+                <a href="../index.html">
+                  <i class="fa fa-chevron-left fa-4x"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="col-1-1 mobile_break">
+      </div>
+
+      <div class="col-2-3 content">
+        <main id="entire-blog">
+          <div class="blog-header">
+            <h1>Blocks, Procs, & Lambdas</h1>
+            <h2>The Showdown</h2>
+            <h4>March 12, 2015</h4>
+          </div>
+
+          <section class="blog-post">
+            <p>
+              The closures in Ruby seem to sometimes lead to confusion. Today I spent some time researching Blocks, Procs, and Lambdas, and now I'm going to show you what I found and learned.
+            </p>
+            <h3>Blocks</h3>
+            <p>
+              Blocks, contrary to what those lying back-stabbers told you about Ruby, are not objects. And that's a shame, but I will discuss that more in the next section because there is a very easy way to make them objects. Essentially, blocks are non-reusable snippets of code that anyone familiar with ruby use all the time when calling tons of different methods that generally need a block to do anything worthwhile like the #each method or the #map method or the #reduce method etc.
+            </p>
+<pre>
+<code>
+  class Array
+    def change_odd_index!
+      self.map!.with_index do |n, i|
+        i.odd? ? n = yield(n) : n = self[i]
+      end
+    end
+
+    def change_odd_index
+      self.clone.change_odd_index! { |n| n = yield(n) }
+    end
+  end
+
+  array = (1..20).to_a
+
+  p array
+  => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+  # non-destructive
+  p array.change_odd_index { |x| x * 10 }
+  => [1, 20, 3, 40, 5, 60, 7, 80, 9, 100, 11, 120, 13, 140, 15, 160, 17, 180, 19, 200]
+
+  p array
+  => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+  # destructive
+  array.change_odd_index! { |x| x * 5 }
+
+  p array
+  => [1, 10, 3, 20, 5, 30, 7, 40, 9, 50, 11, 60, 13, 70, 15, 80, 17, 90, 19, 100]
+
+</code>
+</pre>
+
+            <p>
+              Here I've basically decided I want to make my own methods that take blocks. This isn't essential to explaining blocs nor do blocks need explaining to someone who can understand the code above, but at the end of this long snippet of code you can see that I'm calling a block on the non-destructive change_odd_index method and the destructive chang_odd_index! method which basically decides what happens to every element x that happens to have an index that is an odd number. Those changes are made in the block supplied after which you can do anything that you can normally do to the class of object you find in the given array.
+            </p>
+
+            <h3>Procs</h3>
+            <p>
+              Now we are getting back to the spirit of Ruby. OBJECTS woo! Procs are very useful in the sense that they are reusable. Essentially by creating a new Proc object and supplying a code block you have yourself a proc. I've included an example of some proc usage below, which I will explain even MORE below:
+            </p>
+<pre>
+<code>
+  class Array
+    def display(proc)
+      proc.call(self)
+    end
+  end
+
+  the_fibonaccis = Proc.new do |array|
+    highest_number = array.max
+    fibonaccis = [1, 1]
+    until fibonaccis.max >= array.max
+      fibonaccis << fibonaccis.last(2).reduce(:+)
+    end
+    array = array.select {|n| fibonaccis.include?(n) }
+    array.each do |fib_num|
+      fib_num == 1 ? place = "1 and 2" : place = fibonaccis.index(fib_num)+1
+      puts "We found the #{place} fibonacci number #{fib_num} in this array"
+    end
+  end
+
+  number_array = (1..100).to_a.shuffle.pop(50)
+
+  p number_array
+  => [9, 34, 68, 33, 83, 75, 6, 54, 65, 70, 78, 13, 95, 3, 60, 61, 99, 93, 81, 58, 72, 84, 59, 19, 69, 80, 37, 17, 23, 79, 46, 5, 25, 63, 36, 86, 89, 4, 28, 98, 42, 53, 64, 74, 55, 96, 38, 31, 35, 32]
+
+  number_array.display(the_fibonaccis)
+  => We found the 9 fibonacci number 34 in this array
+     We found the 7 fibonacci number 13 in this array
+     We found the 5 fibonacci number 5 in this array
+     We found the 11 fibonacci number 89 in this array
+     We found the 10 fibonacci number 55 in this array
+</code>
+</pre>
+            <p>
+              Here I am again adding to the Array class. This time it's a method called display. All the display method is doing is taking a variable as an argument and hoping that ends up being a proc that can be called with the #call method on the array that the method is being called on in the first place 'self'. The whole Fibonacci code is just because I'm trying to stay away from "hello world" for a few weeks. When you get down to the calling of the method and proc combination you can see that I'm creating an array with basically 50 random numbers between 1 and 100; storing those values in number_array, and then running the number_array.display method with (the_fibonaccis) as an argument that is then called on as a proc as seen when going right back up to the definition in the Array class of the display method. I could have also produced the same result and avoided creating the display method, but I like typing, anyway here's what I'm talking about...
+            </p>
+<pre>
+<code>
+  the_fibonaccis.call(number_array)
+  => We found the 9 fibonacci number 34 in this array
+     We found the 7 fibonacci number 13 in this array
+     We found the 5 fibonacci number 5 in this array
+     We found the 11 fibonacci number 89 in this array
+     We found the 10 fibonacci number 55 in this array
+</code>
+</pre>
+            <h3>Lambdas</h3>
+            <p>
+              Lambdas, from what I've heard, act like methods in some ways. First of all they are very specific about how many arguments are required. If your to say:
+            </p>
+<pre>
+<code>
+  def sheep(lamb)
+    x, n, y = 45, 10, 20
+    lamb.call(x, n, y)
+  end
+
+  sheep lambda{|x, n| puts "#{x + n} sheep flying" }
+  # ArgumentError: wrong number of arguments (3 for 2)
+
+  sheep lambda{|x, n, y| puts "#{x + n - y} sheep flying" }
+  => 35 sheep flying
+</code>
+</pre>
+            <p>
+              A proc in the same situation would have ignored that 3rd argument seemingly required argument represented by the letter 'y' and avoided an ArgumentError, but lambdas can't do that. Thanks for reading. I hope you feel like some of what I said made sense. I'd like to provide some resources that helped me a lot with these concepts:
+              <ul>
+                <li><a href="http://www.skorks.com/2010/05/ruby-procs-and-lambdas-and-the-difference-between-them/">Alan Skorkin's post from Skorks.com</a></li>
+                <li><a href="http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/">Robert Sosinki's post from Reactive.io</a></li>
+              </ul>
+            </p>
+
+
+          </section>
+        </main>
+      </div>
+
+      <div class="col-1-1 mobile_break">
+      </div>
+
+      <div class="col-1-1">
+        <footer>
+          <p>© Copyright 2015 | Ace Elijah Burgess</p>
+        </footer>
+      </div>
+
+    </div>
+  </body>
+</html>
