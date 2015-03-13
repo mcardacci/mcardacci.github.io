@@ -71,13 +71,13 @@
 <code>
   class Array
     def change_odd_index!
-      self.map!.with_index do |n, i|
-        i.odd? ? n = yield(n) : n = self[i]
+      self.map!.with_index do |number, index|
+        index.odd? ? number = yield(number) : number = self[index]
       end
     end
 
     def change_odd_index
-      self.clone.change_odd_index! { |n| n = yield(n) }
+      self.clone.change_odd_index! { |number| number = yield(number) }
     end
   end
 
