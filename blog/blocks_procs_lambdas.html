@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cardacci</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="A blog about becoming a software developer by Marc Cardacci">
+  <link rel="stylesheet" type="text/css" href="../CSS/blog-stylesheet.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ <link href='https://fonts.googleapis.com/css?family=Oswald|Exo:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <header>
+    <h1 class="title">Marc Cardacci <br> <span>(A blog about becoming a software developer.)</h1>
+      <div class="top-nav">
+        <ul>
+          <a href="../index.html">
+            <li>
+                <i class="fa fa-home fa-2x"></i>
+                <br>
+                Home
+            </li>
+          </a>
+          <a href="about.html">
+            <li>
+              <i class="fa fa-street-view fa-2x"></i>
+                <br>
+                About
+            </li>
+          </a>
+          <a href="archive.html">
+            <li>
+              <i class="fa fa-newspaper-o fa-2x"></i>
+                <br>
+                Archive
+              </li>
+          </a>
+          <a href="#">
+              <li>
+                <i class="fa fa-search fa-2x"></i>
+                  <br>
+                  Search
+              </li>
+          </a>
+        </ul>
+      </div>
+  </header>
+<div class="horizontal-line">
+    <div class="blog-content">
+        <h4>3/6/15</h4>
+        <h1>Blocks, Procs and Lambdas</h1>
+          <p>
+            Before learning what these data structures are capable of, it's important to know how they are classified. Blocks, Procs and Lambda's are what are referred to in computer science as closures. A closure is a data structure that stores a function. Inside the function is it's own environment, like a tiny universe. Closures remember the values of the variables that were in it's environment when the function was created. After it's been created, it is then able to access the variables stored inside. The most common example of closures are blocs.<br> Example block:
+          </p>
+          <pre>
+            <code>
+              array = [1, 2, 3, 4]
+              array.map { |num| p num**2 }
+                    #  ^block is here
+              # => [1, 4, 9, 16]
+            </code>
+          </pre>
+            <ul>
+            <li>
+              &#8674; Here we've used #map on a local variable 'array' containing an array of integers 1-4.
+            </li>
+            <br>
+            <li>&#8674;
+              The code block interacts with a variable inside the {}, called 'num'.
+            </li>
+            <br>
+            <li>&#8674;
+              'num' represents every index in 'array' being squared, one-by-one.
+            </li>
+            <br>
+            <li>&#8674;
+              The result is an array with each index squared.
+            </li>
+          </ul>
+          <p>
+            An often touted falsity about Ruby is that everything is an Object. Well, prepare for your mind to be blown. Blocks are in fact NOT OBJECTS! Take for instance the above example; The Array is an object, it's called on by the map method which is an object. But the block itself is simply part of the syntax of a method call. There is no Block class in the Ruby library. It's purely a syntactic construct. So technically blocks aren't considered closures until they're put in methods. Once blocks are named they can be passed around and exploited at will.
+          </p>
+        <h1>Procs</h1>
+          <p>
+            Procs are objects that store chunks of code which you can create, store, pass as method arguments and execute at will with the 'call' method. Lets create a proc. Example:
+          </p>
+          <pre>
+            <code>
+              p = Proc.new { p "Inside a proc" }
+              pr = proc { p "Inside a proc" }
+
+              p
+              => "Inside a proc"
+              pr
+              => "Inside a proc"
+            </code>
+          </pre>
+          <p>
+            Both of these ways instantiate a proc. When you instantiate them, you must include a code block inside {}. Everything else that happens to them is a variation or addition to this syntax.
+          </p>
+          <p>
+            Now that we know that procs are objects, that gives us the freedom to assign them to variables, put them inside arrays, make them method arguments and come up with some mind-bending code. Next we'll write a method for the Array class. Here's an example:
+          </p>
+          <pre>
+            <code>
+              class Array
+                def iterate!(&code)
+                  self.each_with_index do |num, index|
+                    self[index] = code.call(num)
+                  end
+                end
+              end
+
+              array = [1,2,3,4]
+
+              array.iterate! { |n| n * 3 }
+
+              p array
+              => [3,6,9,12]
+            </code>
+          </pre>
+        <p>
+          <b>Note</b>: This is pretty uncommon to do this in Ruby as the language has plenty of useful methods already built in but it's a good exercise.
+        </p>
+        <ol>
+          <li>
+            It's easiest to start at the '.iterate' code block where we see that we are iterating over an array and multiplying each index by 3.
+          </li>
+          <li>
+            When the 'iterate!' is called in the environment and ran on an Array object, the code block is treated as a proc.
+          </li>
+          <li>
+            If we take a look at the 'iterate!' method's argument you'll see an '&' symbol which is a call 'to_proc'.
+          </li>
+          <li>
+            Inside the method, the code is called and all the numbers multiplied by three (in step 1) are permanently set to the indices: self[index] = code.call(num)
+          </li>
+        </ul>
+        <p>
+          Procs differ from other types closures in the way that they handle arguments. They don't care if they get the correct number of arguments when they get called. Example:
+        </p>
+        <pre>
+            <code>
+              p = proc { |n| puts n }
+
+              p.call
+              => nil
+              p.(1,2,3)
+              => 1
+            </code>
+        </pre>
+        <p>
+          If no arguments get called when the proc expects one argument, it returns nil. If there are more arguments than the expected it returns the first one. Procs are not fussy with their argument list.
+        </p>
+      <h1>Lambda</h1>
+        <p>
+          The syntax of a lambda is very similar to that of a Proc. In fact, lambdas <b>are</b> procs. Meaning that the object that is returned from a lambda is part of the Proc class. They're are just a fussier sibling of the proc. Example:
+        </p>
+        <pre>
+          <code>
+            lam = lambda { puts "A lambda!" }
+            lam.call
+            => "A lambda!"
+          </code>
+        </pre>
+        <p>
+          Ruby implicitly creates procs. So if you've grabbed a code block pointed at a proc, Ruby thinks it's a normal proc. If you want to use a lambda you have to CREATE a lambda explicitly.
+        </p>
+        <pre>
+          <code>
+            def iterate!(&code)
+          </code>
+        </pre>
+        <p>
+          The return keyword is also different between lambda's and procs.
+        </p>
+        <pre>
+          <code>
+            def proc_return
+              proc { return "Proc.new"}.call
+              return "this won't get printed"
+            end
+
+            def lambda_return
+              lambda { return "lambda" }.call
+              return "This does get printed"
+            end
+
+            puts proc_return
+            => Proc.new
+            puts lambda_return
+            => "This does get printed"
+          </code>
+        </pre>
+        <p>
+          A return inside a Proc triggers a return from the code block itself. Inside the lambda however, it exits from the lambda block and in this case returns a string.
+        </p>
+        <p>
+          Unlike the proc, lambdas do in fact care about how many arguments they are given. If you pass them the wrong number like this:
+        </p>
+        <pre>
+          <code>
+            lam = lam { |n| puts n }
+
+            p.call
+            => ArgumentError wrong number of arguments (0 for 1)
+            p.(1,2,3)
+            => ArgumentError wrong number of arguments (3 for 1)
+          </code>
+        </pre>
+        <p>
+          The take away:
+        </p>
+        <ul>
+          <li>&#8674;
+            Blocks are chunks of code used in methods. They AREN'T objects and are basically a syntactical construct.
+          </li>
+          <li>&#8674;
+            Procs are similar in appearance to blocks but are actually objects. They can be inserted into methods, arguments and can be stored for later use. They aren't fussy about their argument list.
+          </li>
+          <li>&#8674;
+            Lambdas are basically procs but they are fussy about their arguments. They must be explicitly created because the Ruby default is Proc. They also make a slightly different use of the 'return' keyword.
+          </li>
+        </ul>
+    </div>
+  <div class="horizontal-line">
+    <footer>
+      <ul class="footer-icons">
+        <a href="https://github.com/mcardacci/">
+              <li class="bottom-icon">
+                <i class="fa fa-github fa-2x"></i>
+              </li>
+          </a>
+        <a href="https://twitter.com/MarcCardacci">
+              <li class="bottom-icon">
+                <i class="fa fa-twitter fa-2x"></i>
+              </li>
+          </a>
+        <a href="https://www.facebook.com/profile.php?id=100008146878953">
+              <li class="bottom-icon">
+                <i class="fa fa-facebook fa-2x"></i>
+              </li>
+          </a>
+        <a href="https://www.linkedin.com/profile/view?id=383416184&trk=nav_responsive_tab_profile">
+              <li class="bottom-icon">
+                <i class="fa fa-linkedin-square fa-2x"></i>
+              </li>
+          </a>
+      </ul>
+      <p>Copyright © Marc Cardacci 2015</p>
+    </footer>
+  </div>
+</body>
+</html>
