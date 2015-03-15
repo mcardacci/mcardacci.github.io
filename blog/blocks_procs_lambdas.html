@@ -56,8 +56,8 @@
           </p>
           <pre>
             <code>
-              array <span style="color:orange;">=</span> [<span style="color: blue">1</span>, <span style="color: blue">2</span>, <span style="color: blue">3</span>, <span style="color: blue">4</span>]
-              array.map { |<span style="color:blue;">num</span>| p num<span style="color:orange;">**</span>2 }
+              array <span style="color:orange;">=</span> [<span style="color: DodgerBlue">1</span>, <span style="color: DodgerBlue">2</span>, <span style="color: DodgerBlue">3</span>, <span style="color: DodgerBlue">4</span>]
+              array.map { |<span style="color:DodgerBlue;">num</span>| p num<span style="color:orange;">**</span>2 }
                     <span style="color:grey;">#  ^block is here</span>
                <span style="color:grey;"># => [1, 4, 9, 16]</span>
             </code>
@@ -92,9 +92,9 @@
               pr <span style="color:orange;">=</span> proc { p <span style="color:#5bdf5d;">"Inside a proc"</span> }
 
               p
-              <span style="color:blue;">=> "Inside a proc"</span>
+              <span style="color:DodgerBlue;">=> "Inside a proc"</span>
               pr
-              <span style="color:blue;">=> "Inside a proc"</span>
+              <span style="color:DodgerBlue;">=> "Inside a proc"</span>
             </code>
           </pre>
           <p>
@@ -107,18 +107,18 @@
             <code>
               <span style="color:orange;">class</span> <span style="color:DeepSkyBlue;">Array</span>
                 <span style="color:orange;">def</span> <span style="color:DeepSkyBlue;">iterate!</span>(<span style="color:orange;">&</span>code)
-                  <span style="color:blue;">self</span>.each_with_index <span style="color:orange;">do</span> |<span style="color:blue;">num</span>, <span style="color:blue;">index</span>|
-                    <span style="color:blue;">self</span>[index] <span style="color:orange;">=</span> code.call(num)
+                  <span style="color:DodgerBlue;">self</span>.each_with_index <span style="color:orange;">do</span> |<span style="color:DodgerBlue;">num</span>, <span style="color:DodgerBlue;">index</span>|
+                    <span style="color:DodgerBlue;">self</span>[index] <span style="color:orange;">=</span> code.call(num)
                   <span style="color:orange;">end</span>
                 <span style="color:orange;">end</span>
               <span style="color:orange;">end</span>
 
-              array <span style="color:orange;">=</span> [<span style="color:blue;">1</span>,<span style="color:blue;">2</span>,<span style="color:blue;">3</span>,<span style="color:blue;">4</span>]
+              array <span style="color:orange;">=</span> [<span style="color:DodgerBlue;">1</span>,<span style="color:DodgerBlue;">2</span>,<span style="color:DodgerBlue;">3</span>,<span style="color:DodgerBlue;">4</span>]
 
-              array.iterate! { |<span style="color:blue;">n</span>| n <span style="color:orange;">*</span> <span style="color:blue;">3</span> }
+              array.iterate! { |<span style="color:DodgerBlue;">n</span>| n <span style="color:orange;">*</span> <span style="color:DodgerBlue;">3</span> }
 
               p array
-              <span style="color:blue;">=> [3,6,9,12]</span>
+              <span style="color:DodgerBlue;">=> [3,6,9,12]</span>
             </code>
           </pre>
         <p>
@@ -143,12 +143,12 @@
         </p>
         <pre>
             <code>
-              p <span style="color:orange;">=</span> proc { |<span style="color:blue;">n</span>| puts n }
+              p <span style="color:orange;">=</span> proc { |<span style="color:DodgerBlue;">n</span>| puts n }
 
               p.call
-              <span style="color:blue;">=> nil</span>
-              p.(<span style="color:blue;">1</span>,<span style="color:blue;">2</span>,<span style="color:blue;">3</span>)
-              <span style="color:blue;">=> 1</span>
+              <span style="color:DodgerBlue;">=> nil</span>
+              p.(<span style="color:DodgerBlue;">1</span>,<span style="color:DodgerBlue;">2</span>,<span style="color:DodgerBlue;">3</span>)
+              <span style="color:DodgerBlue;">=> 1</span>
             </code>
         </pre>
         <p>
@@ -162,7 +162,7 @@
           <code>
             lam <span style="color:orange;">=</span> lambda { puts <span style="color:#5bdf5d;">"A lambda!"</span> }
             lam.call
-            <span style="color:blue;">=> "A lambda!"</span>
+            <span style="color:DodgerBlue;">=> "A lambda!"</span>
           </code>
         </pre>
         <p>
@@ -189,9 +189,9 @@
             <span style="color:orange;">end</span>
 
             puts proc_return
-            <span style="color:blue;">=> Proc.new</span>
+            <span style="color:DodgerBlue;">=> Proc.new</span>
             puts lambda_return
-            <span style="color:blue;">=> "This does get printed"</span>
+            <span style="color:DodgerBlue;">=> "This does get printed"</span>
           </code>
         </pre>
         <p>
@@ -202,12 +202,12 @@
         </p>
         <pre>
           <code>
-            lam <span style="color:orange;">=</span> lam { |<span style="color:blue;">n</span>| puts n }
+            lam <span style="color:orange;">=</span> lam { |<span style="color:DodgerBlue;">n</span>| puts n }
 
             p.call
-            <span style="color:blue;">=> ArgumentError wrong number of arguments (0 for 1)</span>
-            p.(<span style="color:blue;">1</span>,<span style="color:blue;">2</span>,<span style="color:blue;">3</span>)
-            <span style="color:blue;">=> ArgumentError wrong number of arguments (3 for 1)</span>
+            <span style="color:DodgerBlue;">=> ArgumentError wrong number of arguments (0 for 1)</span>
+            p.(<span style="color:DodgerBlue;">1</span>,<span style="color:DodgerBlue;">2</span>,<span style="color:DodgerBlue;">3</span>)
+            <span style="color:DodgerBlue;">=> ArgumentError wrong number of arguments (3 for 1)</span>
           </code>
         </pre>
         <p>
