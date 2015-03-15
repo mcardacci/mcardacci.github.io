@@ -45,6 +45,7 @@ p {
   border-top: 1px solid rgba(255,255,255,0.5);
 }
 .front-of-node {
+  opacity: -1;
   background-color: #5e5d5d;
   height: 1em;
   width: 1em;
