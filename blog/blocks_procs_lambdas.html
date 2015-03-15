@@ -56,10 +56,10 @@
           </p>
           <pre>
             <code>
-              array = [1, 2, 3, 4]
-              array.map { |num| p num**2 }
-                    #  ^block is here
-              # => [1, 4, 9, 16]
+              array <span style="color:orange;">=</span> [<span style="color: blue">1</span>, <span style="color: blue">2</span>, <span style="color: blue">3</span>, <span style="color: blue">4</span>]
+              array.map { |<span style="color:blue;">num</span>| p num<span style="color:orange;">**</span>2 }
+                    <span style="color:grey;">#  ^block is here</span>
+               <span style="color:grey;"># => [1, 4, 9, 16]</span>
             </code>
           </pre>
             <ul>
@@ -88,13 +88,13 @@
           </p>
           <pre>
             <code>
-              p = Proc.new { p "Inside a proc" }
-              pr = proc { p "Inside a proc" }
+              p <span style="color:orange;">=</span> <span style="color:purple;">Proc</span>.<span style="color:orange;">new</span> { p <span style="color:#5bdf5d;">"Inside a proc"</span> }
+              pr <span style="color:orange;">=</span> proc { p <span style="color:#5bdf5d;">"Inside a proc"</span> }
 
               p
-              => "Inside a proc"
+              <span style="color:blue;">=> "Inside a proc"</span>
               pr
-              => "Inside a proc"
+              <span style="color:blue;">=> "Inside a proc"</span>
             </code>
           </pre>
           <p>
@@ -105,20 +105,20 @@
           </p>
           <pre>
             <code>
-              class Array
-                def iterate!(&code)
-                  self.each_with_index do |num, index|
-                    self[index] = code.call(num)
-                  end
-                end
-              end
+              <span style="color:orange;">class</span> <span style="color:DeepSkyBlue;">Array</span>
+                <span style="color:orange;">def</span> <span style="color:DeepSkyBlue;">iterate!</span>(<span style="color:orange;">&</span>code)
+                  <span style="color:blue;">self</span>.each_with_index <span style="color:orange;">do</span> |<span style="color:blue;">num</span>, <span style="color:blue;">index</span>|
+                    <span style="color:blue;">self</span>[index] <span style="color:orange;">=</span> code.call(num)
+                  <span style="color:orange;">end</span>
+                <span style="color:orange;">end</span>
+              <span style="color:orange;">end</span>
 
-              array = [1,2,3,4]
+              array <span style="color:orange;">=</span> [<span style="color:blue;">1</span>,<span style="color:blue;">2</span>,<span style="color:blue;">3</span>,<span style="color:blue;">4</span>]
 
-              array.iterate! { |n| n * 3 }
+              array.iterate! { |<span style="color:blue;">n</span>| n <span style="color:orange;">*</span> <span style="color:blue;">3</span> }
 
               p array
-              => [3,6,9,12]
+              <span style="color:blue;">=> [3,6,9,12]</span>
             </code>
           </pre>
         <p>
@@ -143,26 +143,26 @@
         </p>
         <pre>
             <code>
-              p = proc { |n| puts n }
+              p <span style="color:orange;">=</span> proc { |<span style="color:blue;">n</span>| puts n }
 
               p.call
-              => nil
-              p.(1,2,3)
-              => 1
+              <span style="color:blue;">=> nil</span>
+              p.(<span style="color:blue;">1</span>,<span style="color:blue;">2</span>,<span style="color:blue;">3</span>)
+              <span style="color:blue;">=> 1</span>
             </code>
         </pre>
         <p>
           If no arguments get called when the proc expects one argument, it returns nil. If there are more arguments than the expected it returns the first one. Procs are not fussy with their argument list.
         </p>
-      <h1>Lambda</h1>
+      <h1>Lambdas</h1>
         <p>
           The syntax of a lambda is very similar to that of a Proc. In fact, lambdas <b>are</b> procs. Meaning that the object that is returned from a lambda is part of the Proc class. They're are just a fussier sibling of the proc. Example:
         </p>
         <pre>
           <code>
-            lam = lambda { puts "A lambda!" }
+            lam <span style="color:orange;">=</span> lambda { puts <span style="color:#5bdf5d;">"A lambda!"</span> }
             lam.call
-            => "A lambda!"
+            <span style="color:blue;">=> "A lambda!"</span>
           </code>
         </pre>
         <p>
@@ -170,7 +170,7 @@
         </p>
         <pre>
           <code>
-            def iterate!(&code)
+            <span style="color:orange;">def</span> <span style="color:DeepSkyBlue;">iterate!</span>(<span style="color:orange;">&</span>code)
           </code>
         </pre>
         <p>
@@ -178,20 +178,20 @@
         </p>
         <pre>
           <code>
-            def proc_return
-              proc { return "Proc.new"}.call
-              return "this won't get printed"
-            end
+            <span style="color:orange;">def</span> <span style="color:DeepSkyBlue;">proc_return</span>
+              proc { <span style="color:orange;">return</span> <span style="color:#5bdf5d;">"Proc.new"</span>}.call
+              <span style="color:orange;">return</span> <span style="color:#5bdf5d;">"this won't get printed"</span>
+            <span style="color:orange;">end</span>
 
-            def lambda_return
-              lambda { return "lambda" }.call
-              return "This does get printed"
-            end
+            <span style="color:orange;">def</span> <span style="color:DeepSkyBlue;">lambda_return</span>
+              lambda { <span style="color:orange;">return</span> <span style="color:#5bdf5d;">"lambda"</span> }.call
+              <span style="color:orange;">return</span> "This does get printed"
+            <span style="color:orange;">end</span>
 
             puts proc_return
-            => Proc.new
+            <span style="color:blue;">=> Proc.new</span>
             puts lambda_return
-            => "This does get printed"
+            <span style="color:blue;">=> "This does get printed"</span>
           </code>
         </pre>
         <p>
@@ -202,12 +202,12 @@
         </p>
         <pre>
           <code>
-            lam = lam { |n| puts n }
+            lam <span style="color:orange;">=</span> lam { |<span style="color:blue;">n</span>| puts n }
 
             p.call
-            => ArgumentError wrong number of arguments (0 for 1)
-            p.(1,2,3)
-            => ArgumentError wrong number of arguments (3 for 1)
+            <span style="color:blue;">=> ArgumentError wrong number of arguments (0 for 1)</span>
+            p.(<span style="color:blue;">1</span>,<span style="color:blue;">2</span>,<span style="color:blue;">3</span>)
+            <span style="color:blue;">=> ArgumentError wrong number of arguments (3 for 1)</span>
           </code>
         </pre>
         <p>
@@ -216,14 +216,20 @@
         <ul>
           <li>&#8674;
             Blocks are chunks of code used in methods. They AREN'T objects and are basically a syntactical construct.
-          </li>
+          </li><br>
           <li>&#8674;
             Procs are similar in appearance to blocks but are actually objects. They can be inserted into methods, arguments and can be stored for later use. They aren't fussy about their argument list.
-          </li>
+          </li><br>
           <li>&#8674;
             Lambdas are basically procs but they are fussy about their arguments. They must be explicitly created because the Ruby default is Proc. They also make a slightly different use of the 'return' keyword.
           </li>
         </ul>
+        <h2>References:</h2>
+        <p>
+          <a href="http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/">Understanding Blocks, Procs and Lambdas</a><br>
+          <a href="http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/">Closures - A Simple Explanation</a><br>
+          <a href="http://www.amazon.com/The-Well-Grounded-Rubyist-David-Black/dp/1933988657">The Well Grounded Rubyist by David A. Black</a>
+        </p>
     </div>
   <div class="horizontal-line">
     <footer>

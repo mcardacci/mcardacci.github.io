@@ -177,6 +177,8 @@ pre {
     overflow: auto;
     width: 93%;
     font-family: "Courier New", Courier, monospace, sans-serif;
+    background-color: black;
+    color: white;
 }
 li {
   font-family: 'baskerville'
