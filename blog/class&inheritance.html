@@ -65,13 +65,13 @@
           </p>
           <pre>
             <code>
-              class Alien
-                  def initialize
-                  end
+              <span style="color:orange;">class</span> <span style="color:DeepSkyBlue;">Alien</span>
+                  <span style="color:orange;">def</span> initialize
+                  <span style="color:orange;">end</span>
 
-                  def feed
-                  end
-              end
+                  <span style="color:orange;">def</span> feed
+                  <span style="color:orange;">end</span>
+              <span style="color:orange;">end</span>
             </code>
           </pre>
           <p>
@@ -79,24 +79,24 @@
           </p>
           <pre>
             <code>
-              class Alien
-                def initialize(name, age)
-                    @name = name
-                    @age = age
-                    @eye_color = "jaundice"
-                    @planet = "kukundu"
-                    @skin = "scales"
-                  end
-                def feed
-                    puts "consumes matter"
-                  end
-              end
+              <span style="color:orange;">class</span> <span style="color:DeepSkyBlue;">Alien</span>
+                <span style="color:orange;">def</span> <span style="color:DeepSkyBlue;">initialize</span>(<span style="color:DodgerBlue;">name</span>, <span style="color:DodgerBlue;">age</span>)
+                    <span style="color:DodgerBlue;">@name</span> <span style="color:orange;">=</span> name
+                    <span style="color:DodgerBlue;">@age</span> <span style="color:orange;">=</span> age
+                    <span style="color:DodgerBlue;">@eye_color</span> <span style="color:orange;">=</span> <span style="color:Lime;">"jaundice"</span>
+                    <span style="color:DodgerBlue;">@planet</span> <span style="color:orange;">=</span> <span style="color:Lime;">"kukundu"</span>
+                    <span style="color:DodgerBlue;">@skin</span> <span style="color:orange;">=</span> <span style="color:Lime;">"scales"</span>
+                  <span style="color:orange;">end</span>
+                <span style="color:orange;">def</span> feed
+                    puts <span style="color:Lime;">"consumes matter"</span>
+                  <span style="color:orange;">end</span>
+              <span style="color:orange;">end</span>
 
-              child_alien = Alien.new("Frank", 12)
-              => @name="Frank", @age=12, @eye_color="jaundice", @planet="kukundu", @skin="scales">
+              child_alien <span style="color:orange;">=</span> <span style="color:purple;">Alien</span>.new(<span style="color:Lime;">"Frank"</span>, <span style="color:DodgerBlue;">12</span>)
+              <span style="color:DodgerBlue;">=> @name="Frank", @age=12, @eye_color="jaundice", @planet="kukundu", @skin="scales"></span>
 
               child_alien.feed
-              => "consumes matter"
+              <span style="color:DodgerBlue;">=> "consumes matter"</span>
             </code>
           </pre>
           <p>
@@ -104,48 +104,48 @@
           </p>
           <pre>
             <code>
-              class AlienEnvironment
-                def temperature_convert
-                  rand(70) * Math::PI
-                end
-              end
+              <span style="color: orange;">class</span> <span style="color: DeepSkyBlue;">AlienEnvironment</span>
+                <span style="color: orange;">def</span> <span style="color: DeepSkyBlue;">temperature_convert</span>
+                  rand(<span style="color: DodgerBlue;">70</span>) <span style="color: orange;">*</span> Math::PI
+                <span style="color: orange;">end</span>
+              <span style="color: orange;">end</span>
 
-              class Alien < AlienEnvironment
-                @@life_form_ids = []
-                def initialize(name, age)
-                  @name = name
-                  @age = age
-                  @eye_color = "jaundice"
-                  @planet = "kukundu"
-                  @skin = "scales"
-                  @@life_form_ids << @name
-                end
+              <span style="color: orange;">class</span> <span style="color: DeepSkyBlue;">Alien</span> < <span style="color: DeepSkyBlue;">AlienEnvironment</span>
+                <span style="color: DodgerBlue;">@@life_form_ids</span> <span style="color: orange;">=</span> []
+                <span style="color: orange;">def</span> <span style="color: DeepSkyBlue;">iitialize</span>(<span style="color: DodgerBlue;">name</span>, <span style="color: DodgerBlue;">age</span>)
+                  <span style="color: DodgerBlue;">@name</span><span style="color: orange;"> =</span> name
+                  <span style="color: DodgerBlue;">@age</span> <span style="color: orange;">=</span> age
+                  <span style="color: DodgerBlue;">@eye_color</span> <span style="color: orange;">=</span> <span style="color: Lime;">"jaundice"</span>
+                  <span style="color: DodgerBlue;">@planet</span> <span style="color: orange;">=</span> <span style="color: Lime;">"kukundu"</span>
+                  <span style="color: DodgerBlue;">@skin</span> <span style="color: orange;">=</span> <span style="color: Lime;">"scales"</span>
+                  <span style="color: DodgerBlue;">     @@life_form_ids</span> << <span style="color: DodgerBlue;">@name</span>
+                <span style="color: orange;">end</span>
 
-                def check_the_weather
-                  case temperature_convert
-                  when 100..1000
-                    p "Your bones will fry."
-                  when 40..99
-                    p "It's safe to go out."
-                  else
-                    p "It's way too cold to support life."
-                  end
-                end
-                def self.alien_ids()
-                  p "The total list of alien ids: #{@@life_form_ids}"
-                end
-                def feed
-                  puts "consumes matter"
-                end
-              end
+                <span style="color: orange;">def</span> <span style="color: DeepSkyBlue;">check_the_weather</span>
+                  <span style="color: orange;">case</span> temperature_convert
+                  <span style="color: orange;">when</span> <span style="color: DodgerBlue;">100</span>..<span style="color: DodgerBlue;">1000</span>
+                    p <span style="color: Lime;">"Your bones will fry."</span>
+                  <span style="color: orange;">when</span> <span style="color: DodgerBlue;">40</span>..<span style="color: DodgerBlue;">99</span>
+                    p <span style="color: Lime;">"It's safe to go out."</span>
+                  <span style="color: orange;">else</span>
+                    p <span style="color: Lime;">"It's way too cold to support life."</span>
+                  <span style="color: orange;">end</span>
+                <span style="color: orange;">end</span>
+                <span style="color: orange;">def</span> <span style="color: DeepSkyBlue;">self.alien_ids()</span>
+                  p <span style="color: Lime;">"The total list of alien ids: #{@@life_form_ids}"</span>
+                <span style="color: orange;">end</span>
+                <span style="color: orange;">def</span> <span style="color: DeepSkyBlue;">feed</span>
+                  puts <span style="color: Lime;">"consumes matter"</span>
+                <span style="color: orange;">end</span>
+              <span style="color: orange;">end</span>
 
-              child_alien = Alien.new("Fredrick", 12)
-              child_alien.check_the_weather #evaluates to one of the case statements
-              =>"Your bones will Fry"
+              child_alien <span style="color: orange;">=</span> <span style="color: purple;">Alien</span>.new(<span style="color: Lime;">"Fredrick"</span>, <span style="color: DodgerBlue;">12</span>)
+              child_alien.check_the_weather <span style="color: grey;">#evaluates to one of the case statements</span>
+              <span style="color: DodgerBlue;">=>"Your bones will Fry"</span>
 
-              wacky_alien = Alien.new("tom", 25)
-              Alien.alien_ids()
-              =>The total list of alien ids: [/"Fredrick"/, /"tom"/]
+              wacky_alien <span style="color: orange;">=</span> <span style="color: purple;">Alien</span>.new(<span style="color: Lime;">"tom"</span>, <span style="color: DodgerBlue;">25</span>)
+              <span style="color: purple;">Alien</span>.alien_ids()
+              <span style="color: DodgerBlue;">=>The total list of alien ids: [/"Fredrick"/, /"tom"/]</span>
             </code>
           </pre>
         <h1>Explanation</h1>
