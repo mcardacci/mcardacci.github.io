@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+    <link rel="stylesheet" href="../fonts/font-awesome/css/font-awesome.min.css">
+    <title>Do Each For A While | A. Burgess</title>
+  </head>
+  <body>
+    <div class="grid grid-pad">
+      <div class="col-2-3 header">
+        <header>
+          <h1><span>aceburgess</span> .github.io</h1>
+        </header>
+      </div>
+
+      <div class="col-1-1 mobile_break">
+      </div>
+
+      <div class="col-1-3 header twitter">
+        <a href="https://twitter.com/aceburgess">
+          <i class="fa fa-twitter fa-lg"></i>
+        </a>
+      </div>
+
+      <div class="col-1-1 desktop_break">
+        <!--Keeps Content and sidebar below Header-->
+      </div>
+
+      <div class="col-1-3 sidebar">
+        <nav onclick="">
+          <div class="module back">
+           <a href="../index.html">
+            <i class="fa fa-chevron-left fa-lg"></i></a><z></z>
+          </div>
+
+          <div class="module nav">
+            <ul id="navigation">
+              <li>
+                <a href="../index.html">
+                  <i class="fa fa-chevron-left fa-4x"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="col-1-1 mobile_break">
+      </div>
+
+      <div class="col-2-3 content">
+        <main id="entire-blog">
+          <div class="blog-header">
+            <h1>Do Each For A While</h1>
+            <h2>Differences between looping in Javascript vs Ruby</h2>
+            <h4>March 20 2015</h4>
+          </div>
+
+          <section class="blog-post">
+            <p>
+              Every once in a while on my programming journey. I'd peak down a dark, dangerous alleyway and see a for loop. Those things scared me to death. I've had to face that fear in the past week, now we're kind of becoming good friends. Not so scary after all. One of the biggest differences I've noticed between Javascript and Ruby is that Ruby really helps you out when it comes to iteration. In most cases in Javascript you need to know exactly HOW to achieve a certain goal when looping. Seems simple enough, but even the thought of grabbing the maximum value from an array takes some thought. In Ruby it's just array.max. In Javascript it's a full on for loop with variables being stored, children crying etc. But at the end of the day the satisfaction you get from actually writing that out and the experience it gives you in dealing with even more complicated challenges is priceless. I'm actually loving this tough transition from Ruby to Javascript. Let me go into more detail about the iterator situation we have going on in JS vs Ruby.....
+            </p>
+
+            <p>
+              So first of all, I can't pretend to know even half of the iterators Ruby gives you, but here's what I can think of now, and maybe I'll peak at rubydocs if I get stuck:
+            </p>
+
+            <ul>
+              <li>#each</li>
+              <li>#reverse_each</li>
+              <li>#map (a.k.a. #collect)</li>
+              <li>#select</li>
+              <li>#times</li>
+              <li>#step</li>
+              <li>#upto</li>
+              <li>#downto</li>
+              <li>#keep_if</li>
+              <li>#delete_if</li>
+              <li>#each_with_index</li>
+              <li>#reduce (a.k.a. #inject)</li>
+            </uL><br>
+
+            <p>
+              This really isn't even scratching the surface. It get's insane, and it's cool to have all of these amazing tools. Javascript looks like it really just focuses on the for and while loop which both exist in Ruby, but generally aren't the quickest solution. So if you're in a situation that calls for any of these Ruby iterations in Javascript you're gonna have to know how they perform their magic.
+            </p>
+
+            <p>
+              That leads me to my next point, the reason this for loop has been so intimidating at first was due to the fact that in learning Ruby you also find that reading code is meant to be very english-like. Even someone that has never studied a programming language can probably read some, if not most, Ruby code and understand in general what should be happening. The whole syntax of for...in or for...of or even worse the for ( var ; conditional ; incrementor ) is classic, but takes some practice before really understanding.
+            </p>
+
+            <p>
+              One thing I want to mention: The for loop in Javascript that seems to be most reliable is the first example I give below. I also compare it to the step iterator in Ruby in which you have your starting point on the left, which in Javascript is stored in the variable you assign (i in this case). Then, the ending point, which is the conditional in the second statement; in this case the array.length. And finally the step value; in this case 1 (i++), which could be any value.
+            </p>
+
+<pre>
+<code>
+  var array = ['a', 'b', 'c', 'd'];
+
+  for ( var i = 0 ; i < array.length ; i ++ ) {
+    console.log( array[i] );
+  };
+
+  <span class="comment">// Here's what's logged to console:</span>
+
+  > a
+  > b
+  > c
+  > d
+</code>
+</pre>
+
+            <p>
+              The reason I say that the above example is more reliable is because the other types of for loops: for...in and for...of are not guaranteed to iterate through each element in an array in any strict order. Let's take a look at both of those types:
+            </p>
+
+<pre>
+<code>
+  var array = ['a', 'b', 'c', 'd'];
+
+  <span class="comment">// In the for...in loop the variable on the left of 'in' will represent the index number.</span>
+  <span class="comment">// This is similar to the #each_index iterator in Ruby.</span>
+
+  for ( i in array ) {
+    console.log( i );
+  };
+
+  <span class="comment">// Below you see the indexes of the array are printed to the console.</span>
+  > 0
+  > 1
+  > 2
+  > 3
+
+
+  <span class="comment">// In the for...of loop the variable on the left of 'of' will represent the actual element in the array.
+  // This is closer to the #each iterator in Ruby.</span>
+
+  for ( i of array ) {
+    console.log( i );
+  };
+
+  <span class="comment">// Here you see the actual elements of the array are printed to the console.
+  // But keep in mind this feature I haven't been able to get to work in node in terminal. Only in chromes console have I acutally tried it, and it is described as an experimental feature in Javascripts documentation.</span>
+  > a
+  > b
+  > c
+  > d
+
+
+</code>
+</pre>
+
+            <p>
+              In my experience so far, both of these for loops mentioned above DO loop through the array in order, but I guess the point is that it's not a sure thing and therefore not reliable if the order is necessary, which is a shame. To be safe, it's recommended to use the first for loop I mentioned above with the three semicolon separated statements. Thanks again for following my never-ending learning experience. Till next time.
+            </p>
+
+          </section>
+        </main>
+      </div>
+
+      <div class="col-1-1 mobile_break">
+      </div>
+
+      <div class="col-1-1">
+        <footer>
+          <p>© Copyright 2015 | Ace Elijah Burgess</p>
+        </footer>
+      </div>
+
+    </div>
+  </body>
+</html>
