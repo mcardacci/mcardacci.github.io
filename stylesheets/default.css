@@ -91,10 +91,6 @@ body {
   font-weight: 400;
 }
 
-#indexJS {
-  opacity: 0;
-}
-
 a {
   text-decoration: none;
 }
@@ -152,10 +148,16 @@ a i {
   padding: 30px;
 }
 
+/* Main styling */
+
+#indexJS {
+  opacity: 0;
+}
+
 footer {
   margin-top: 10%;
   margin-bottom: 10px;
-  padding-bottom: 200px;
+  padding-bottom: 50px;
   text-align: center;
   font-size: 70%;
   color: rgba(70, 70, 70, 0.4);
