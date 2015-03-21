@@ -91,6 +91,10 @@ body {
   font-weight: 400;
 }
 
+#indexJS {
+  opacity: 0;
+}
+
 a {
   text-decoration: none;
 }

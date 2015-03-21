@@ -54,6 +54,7 @@
 }
 
 #entire-blog {
+  opacity: 0;         /* For javascript fade which can be seen in site.js */
   color: rgba(30,30,30,0.8);
 }
 
