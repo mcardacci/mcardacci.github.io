@@ -9,6 +9,7 @@ navigationBar.innerHTML =
   "<li><a href='http://www.github.com/aceburgess'>GitHub</a></li>" +
   "<li class='blog_list' onclick=''><a href='#'>Blog</a><z></z>" +
   "<ul id='blog'>" +
+    "<li>- <a href='blog/t8-tech.html'>Sorting Algorithms</a></li>" +
     "<li>- <a href='blog/c7-values.html'>The Value System</a></li>" +
     "<li>- <a href='blog/t7-JavaScript.html'>Do Each For A While</a></li>" +
     "<li>- <a href='blog/c6-stereotype-threat.html'>Stereotype Threat</a></li>" +

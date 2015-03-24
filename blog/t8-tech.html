@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../fonts/font-awesome/css/font-awesome.min.css">
     <script src="../JavaScript/site.js"></script>
     <script src="../JavaScript/blog.js"></script>
-    <title>Bubble, Merge, Quick, Bogo Sort | A. Burgess</title>
+    <title>Sorting Algorithms | A. Burgess</title>
   </head>
   <body onload="fadeIn('entire-blog');"> <!-- onload for fade of blog elements opacity -->
     <div class="grid grid-pad">
@@ -56,8 +56,8 @@
       <div class="col-2-3 content">
         <main id="entire-blog">
           <div class="blog-header">
-            <h1>Bubble, Merge, Quick, Bogo Sort</h1>
-            <h2>The sorting algorithms and my take on them in Ruby</h2>
+            <h1>Sorting Algorithms</h1>
+            <h2>Bubble Sort, Merge Sort, Quick Sort, even Bogo Sort. First three written in Ruby.</h2>
             <h4>March 24 2015</h4>
           </div>
 
@@ -68,8 +68,10 @@
             <br>
               So I actually worte my own Ruby code for the Bubble sort, Merge sort, and Quick sort algorithms. Let's start with:
             </p>
-
+            <br>
+            <br>
             <h3>Bubble Sort</h3>
+            <br>
             <p>
               Bubble Sort goes through the array one element at a time and compares it with the element after. If the first element is greater than the second element they are swapped. This process continues through the entire array until a whole pass goes by where not a single element is moved. This is part of the reason why bubble sort is not seen as a great algorithm when working with medium to larger datasets. It's average performance is O(n²) and best case is O(n) which is great but only really happens if the array is fully sorted to begin with (aka pointless). You can see in my code that I'm setting my sorting variable to true so that I know when the array is still being sorted. If even one element is swapped the variable sorting is set back to true. Only once an entire pass goes by that not a single array[n] is greater than array[n+1] do I let that sorting = false and break free from the loop.
             </p>
@@ -102,9 +104,10 @@
 
 </code>
 </pre>
-
-
+            <br>
+            <br>
             <h3>Merge Sort</h3>
+            <br>
             <p>
               Merge sort works very differently from Bubble sort. I wrote this code using recursion and even had to write out the recursive process on paper so I could wrap my head around what's going on. I've included the scraps of paper in an image below that details how I interpret what's going on here. Merge sort works by splitting the array into two halves and then splitting those sub-arrays into two halves and doing that all the way down till at least one array from the left-right split have no elements inside. No sorting happens until that process is done. Then on the way back up each sub-array is sorted by their first element being compared to the first element of the other sub-array until at least one of those arrays has no more elements and then that temporary sorted array is merged with the other sub-array and technically the empty sub-array whether it be the left or right. This keeps happening until we finally reach our initial call of merge_sort where we combine the two sorted halves in the final run through the merge method. This method will go again through the first element of each array left and right and compare them and if the first left element is less than the first right element the first element is moved to the sorted array. Otherwise the first right element is moved to the sorted array. This keeps going until either the left or right array is empty. Then the final sub-arrays are concatenated to the sorted array and we get our solution. Best, Worst, and Average case scenarios the performance of Merge sort is O(n*log(n)). Decent for medium and larger datasets.
             </p>
@@ -144,8 +147,10 @@
 
               <img src="">
             </p>
-
+            <br>
+            <br>
             <h3>Quick Sort</h3>
+            <br>
             <p>
               Quick sort is the final sorting algorithm I'm going to go over today. It's somewhat similar to the Merge Sort and has the same Big-O notation time-complexity, however, instead of the left and right sections being split up into even halves they are actually randomly split by one number from the array which then takes every element less than that value (called the pivot) and transfers it to the left array and all the elements greater than the pivot and transfers those to the right array. This goes on recursively until each sub-array is sorted and joined by concatenation going all the way back up to the first level in the stack where the final two arrays are joined to make one perfectly sorted array. Code for this algorithm is below:
             </p>
@@ -170,6 +175,8 @@
 </code>
 </pre>
 
+            <br>
+            <br>
             <p>
               I mentioned my new favorite sorting algorithm being bogosort. To give you an example of what bogosort is let's pretend you have 30 cards with the numbers 1 through 30 on them. Take those cards and throw them off of a bridge. Go get those cards and line them up. Are they in order? No? Take those cards this time and throw them out of your car window. Turn around pick them up and line em up. In order yet? No? Well what are you waiting for...pick those bad boys up and make it rain on the sidewalk. Third times a charm. And now it's time for you to think about how long you wanna continue like this. It's a dark existence. Funny thing about bogosort is it has a best case scenario of 0(n) which is excellent and a worst case scenario of an unbounded number of tries.
             </p>
