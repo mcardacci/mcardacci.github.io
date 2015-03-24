@@ -1,12 +1,13 @@
 // Footer Javascript
 function footerAutoDate() {
-var footer = document.getElementById("footerJS");
+  var footer = document.getElementById("footerJS");
 
-footer.innerHTML =
-"<p>© Copyright " + new Date().getFullYear() + " | Ace Elijah Burgess</p>";
+  footer.innerHTML =
+  "<p>© Copyright " + new Date().getFullYear() + " | Ace Elijah Burgess</p>";
 }
 
 addLoadEvent(footerAutoDate);
+
 
 function addLoadEvent(func) {
   var oldonload = window.onload;
