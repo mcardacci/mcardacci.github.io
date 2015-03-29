@@ -25,6 +25,7 @@ navigationBar.innerHTML =
     "<li>- <a href='blog/t2-css-design.html'>Absolutely Not Your Relative</a></li>" +
     "<li>- <a href='blog/c1-chefs-kitchen.html'>DBCulture</a></li>" +
     "<li>- <a href='blog/t1-git-blog.html'>Git Off My Property</a></li>" +
+    "<li>- <a href='cheatsheet/main.html'>SQL cheatsheet</a></li>" +
   "</ul></li>" +
 "</ul>";
 }
