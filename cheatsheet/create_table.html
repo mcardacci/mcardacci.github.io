@@ -1,0 +1,57 @@
+<!DOCTYPEhtml>
+<html>
+  <head>
+    <title>Create Table</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div class="grid grid-pad">
+      <div class="col-1-1">
+        <header class="header">
+          <h1 id="headerJS"></h1>
+          <h3 id="subHeaderJS"></h3>
+        </header>
+      </div>
+
+      <div class="col-1-1 desktop_break"></div>
+
+      <div class="col-1-3">
+        <nav id="navigationJS">
+        </nav>
+      </div>
+      <div class="col-2-3">
+        <h3 class="sub_title">CREATE TABLE</h3><br>
+        <p>
+          <span >Creates a new table:</span>
+        </p><br>
+        <h3 class="sub_title">Syntax:</h3><br>
+<pre>
+CREATE TABLE table_name
+(
+column_name1 data_type(size),
+column_name2 data_type(size),
+column_name3 data_type(size),
+....
+);
+</pre><br>
+        <h3 class="sub_title">Example:</h3><br>
+<pre>
+CREATE TABLE Persons
+(
+PersonID int,
+LastName varchar(255),
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255)
+);
+</pre>
+        <br>
+        <p>
+          -The PersonID column is of type int and will hold an integer.<br>
+          -The LastName, FirstName, Address, and City columns are of type varchar and will hold characters, and the maximum length for these fields is 255 characters.
+        </p>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
