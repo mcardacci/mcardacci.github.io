@@ -41,14 +41,12 @@ p {
   color: white;
   padding: 10px 5px 0;
   margin: 0 30px;
-  font-size: 12px;
+  font-size: 5px;
   border-top: 1px solid rgba(255,255,255,0.5);
 }
 .front-of-node {
-  opacity: -1;
-  background-color: #5e5d5d;
-  height: 1em;
-  width: 1em;
+  height: .2em;
+  width: .2em;
 }
 
 .node-container {
@@ -97,7 +95,7 @@ top: 24em;
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 40%;
   background-position: center center;
 }
 .info .front-of-node {
@@ -105,7 +103,7 @@ top: 24em;
 }
 .info .back-of-node {
   opacity: 0;
-  background:black;
+  background-color: black;
   pointer-events: none;
   transform: scale(1.5);
   transition: all 0.4s ease-in-out 0.2s;
@@ -119,33 +117,3 @@ top: 24em;
   opacity: 1;
   pointer-events: auto;
 }
-/*experiment gone terribly wrong*/
-/*.node-div {
-width:200px; height:150px;
-position:relative;
--webkit-transform-style: reserve-3d;
--webkit-transform-origin: 100% 75px;
--webkit-transition: all 0.7s ease;
--moz-transition: all 0.7s ease;
--o-transition: all 0.7s ease;
-transform-style: preserve-3d;
-transform-origin: 100% 130px;
-transition: all 0.7s ease;
-}
-.node-container:hover .node-div {
--webkit-transform: rotateX(-180deg);
-transform: rotateX(-180deg);
-}
-.front-of-node, .back-of-node {
-width:200px;
-height:150px;
-position:absolute; left:0;
--webkit-backface-visibility:hidden;
-backface-visibility:hidden;
-}
-.back-of-node {
-padding-top:50px;
--webkit-transform: rotateX(180deg);
-transform: rotateX(180deg);
-}
-*/

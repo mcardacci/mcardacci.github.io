@@ -37,7 +37,7 @@ p {
   margin-bottom: 3.5em;
 }
 a {
-  color:  #bc1e1b;
+  color:  red;
 }
 .remove-margin {
   margin: 0;
@@ -51,18 +51,18 @@ a {
   font-family: 'Exo', sans-serif;
 }
 .icon-list a {
-  color: #113c48;
+  color: white;
   width:48%;
 }
 .icon-list span:hover {
   text-decoration: none;
-  color: #bc1e1b;
+  color: red;
 }
 .display {
   display: block !important;
 }
 .morph-shape {
-background-color: #5c769a ;
+background-color: #04153A ;
 }
 .menu-wrap {
 float: right;
@@ -158,10 +158,7 @@ padding-bottom: 20px;
 .logo {
 text-align: center;
 }
-.logo img {
-padding-top: 100px;
-margin: 0 auto;
-}
+
 p.description {
 font-family: 'Times New Roman';
 font-style: italic;

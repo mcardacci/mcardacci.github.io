@@ -7,6 +7,9 @@ html, body {
 @-ms-viewport {
   width: device-width;
 }
+.arc-img {
+  position:relative;
+}
 img {
   display: block;
   border-radius: 12px;
@@ -28,7 +31,8 @@ h2 {
   font-size: 70px;
   font-family: 'Oswald', sans-serif;
   margin-bottom: 0;
-  padding-bottom: 0;
+  padding: 0.8em 0 0 0;
+  color: blue;
 }
 .title span {
   display: block;
@@ -36,29 +40,48 @@ h2 {
   color: #aaaaaa;
   font-family: 'garamond';
 }
-.top-nav {
+nav {
+  background-color: purple;
+  margin: 0;
+  padding: 0;
   width: 100%;
+  position: fixed;
+  top: 0;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
 }
-.top-nav a {
+nav.hidden {
+  transform: translate3d(0, -100%, 0);
+  -ms-transform:translate3d(0, -100%, 0);
+  -webkit-transform: translate3d(0, -100%, 0);
+}
+nav a {
   display: inline-block;
   width: 23%;
   color:black;
   text-decoration: none;
   list-style-type: none;
   border-radius: .34em;
-  border: solid white medium;
+  border: solid #ccd0d7 medium;
   border-width: .13em;
   text-align:  center;
   transition: 0.5s all ease;
   padding-top: 0;
   margin-top: 0;
 }
-.top-nav a:hover {
-  color: #888;
-  border-color:#888;
+nav a:hover {
+  color: #006570;
+  border-color:#006570;
+  border-spacing: 0;
 }
-.top-nav li {
+nav li {
   font-family: 'Exo', sans-serif;
+
+  transition: 0.5s all ease;
+}
+nav li:hover {
+  color:inherit;
 }
 .blog-content h1 {
   color: #006570;
@@ -112,8 +135,7 @@ footer p {
   text-decoration: none;
 }
 .arc-content {
-  padding: 10px;
-  padding-bottom: 100px;
+  padding-bottom: 80px;
   margin-left: 4em;
 
 }
@@ -133,6 +155,7 @@ footer p {
   color: #006570;
   font-family: 'Oswald', sans-serif;
   margin-left: 1em;
+  padding-top: 0;
 }
 .arc-content p {
   color: #888;
@@ -150,8 +173,7 @@ footer p {
   position:relative;
 }
 #header {
-  padding: 10px;
-  height:80%;
+  padding: 0;
 }
 #footer {
   width: 100%;
@@ -187,3 +209,5 @@ li {
 ul {
   list-style-type: none;
 }
+
+

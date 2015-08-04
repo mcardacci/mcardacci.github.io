@@ -130,7 +130,7 @@ padding: 0.8em;
 .icon-list i {
 font-size: 1.5em;
 vertical-align: middle;
-color: #282a35;
+color: grey;
 }
 .icon-list a span {
 margin-left: 10px;
@@ -145,7 +145,7 @@ width: 100%;
 height: 100%;
 top: 0;
 right: 0;
-fill:   #5c769a;
+fill:   #04153A;
 }
 /* Shown menu */
 .show-menu .menu-wrap,
