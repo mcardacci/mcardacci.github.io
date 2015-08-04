@@ -94,6 +94,72 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+.navbar-default {
+	opacity: 1;
+	background-color: black;
+}
+
+.navbar-default .navbar-brand {
+	font-family: "Helvetica Neue",Helvetica,Arial;
+	color: black;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:active,
+.navbar-default .navbar-brand.active {
+  color: #2B4C7E;
+  transition: background 2s;
+  -moz-transition: background 2s;
+  -webkit-transition: background 2s;
+}
+
+.navbar-default .navbar-collapse {
+  border-color: rgba(255,255,255,.02);
+  border:none;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #2B4C7E;
+    background-color: #2B4C7E;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #2B4C7E;
+}
+
+.navbar-default .nav li a {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: black;
+}
+
+.navbar-default .nav li a:hover,
+.navbar-default .nav li a:focus {
+    outline: 0;
+    color: #2B4C7E;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    border-radius: 0;
+    color: #fff;
+    background-color: #2B4C7E;
+}
+
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #fff;
+    background-color: #2B4C7E;
+}
+
 header {
 	min-height: 790px;
 	max-height: 800px;
@@ -122,6 +188,21 @@ header .intro-text .intro-heading {
 	font-size: 50px;
 	font-weight: 700;
 	line-height: 50px;
+}
+
+@media(min-width:768) {
+	header .intro-text {
+		padding-top: 100px;
+		padding-bottom: 200px;
+	}
+
+	header .intro-text .intro-lead-in {
+		margin-bottom: 25px;
+		font-family: "Droid Serif","Helvetica Neue",Helvetica;
+		font-size: 40px;
+		font-style: italic;
+		line-height: 40px;
+	}
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
