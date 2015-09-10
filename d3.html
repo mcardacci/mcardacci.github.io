@@ -1,8 +1,17 @@
 <!doctype html>
 <head>
   <title>E.Zen</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1>TEST</h1>
+  <h1>Challenge #1</h1>
+  <form id="myForm" action="https://api.github.com/search/users?q=" method="get">
+    Search: <input type="text" name="search"><br>
+    <input type="submit" value="Submit">
+  </form>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+  <script type="text/javascript" src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+  <script type="text/javascript" src="d3Form.js"></script>
 </body>
 </html>
