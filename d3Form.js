@@ -30,8 +30,9 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
         barData.push({ letter: xAxisLabels[j], frequency: (loginNames.split(xAxisLabels[j]).length - 1)});
       }
       //pushes all other characters into other field
-      barData.push({ letter: "other", frequency: loginNames.match(/([^a-z])/g).length});
-
+      if (loginNames.match(/([^a-z])/g)){
+        barData.push({ letter: "other", frequency: loginNames.match(/([^a-z])/g).length});
+      }
       //renders the bar chart
       renderChart(barData);
     }
