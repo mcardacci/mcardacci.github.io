@@ -61,7 +61,7 @@ h6 {
 }
 
 .bg-light-gray {
-    background-color: #f7f7f7;
+    background-color: #333;
 }
 
 .bg-darkest-gray {
@@ -175,7 +175,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-brand {
     font-family: font-family: 'Squada One',"Helvetica Neue",Helvetica,Arial,cursive;
-    color: rgb(242, 239, 11);
+    color: white;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -264,13 +264,14 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../img/city.jpg);
+    background-image: url(../img/night-galaxy.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    height: 58em;
 }
 
 
@@ -328,6 +329,7 @@ section h2.section-heading {
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 40px;
+    color: #0fe0f5;
 }
 
 section h3.section-subheading {
