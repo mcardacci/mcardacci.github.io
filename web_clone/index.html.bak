@@ -863,7 +863,7 @@ document.write(year)
 	</div>
 </div>
 
-<form id="gn-loginForm" name="loginForm" class="form-inline login" action="http://10.0.0.121/Login.aspx" method="POST" data-validator data-disable="false" data-focus="false">
+<form id="gn-loginForm" name="loginForm" class="form-inline login" action="https://welcome.wellmark.com/Authentication/Login.aspx" method="POST" data-validator data-disable="false" data-focus="false">
 	<div class="errors" aria-hidden="true" role="alert" aria-live="assertive" aria-atomic="true">
 		<div class="errors-focus" tabindex="-1">
 			<span class="icon-warning pull-left" aria-hidden="true"></span>
@@ -925,7 +925,7 @@ document.write(year)
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-sm-8">
-							<form id="lm-loginForm" name="loginForm" class="form-inline login" action="http://10.0.0.121/Login.aspx" method="POST"
+							<form id="lm-loginForm" name="loginForm" class="form-inline login" action="https://welcome.wellmark.com/Authentication/Login.aspx" method="POST"
 								  data-validator data-disable="false" data-focus="false">
 								<div class="clearfix">
 									<h2 id="login-modal-label" class="pull-left">Log In to myWellmark<!--<br><br><div style="text-transform:none;"><i>myWellmark Care Finder tool will be unavailable on Saturday, 9/30, from 6pm-midnight.</i></div>--></h2>

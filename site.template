@@ -1,0 +1,14 @@
+TEMPLATE=CUSTOM
+URL=https://www.wellmark.com/
+
+
+PARAM: userid=asdf
+PARAM: password=asdf
+PARAM: indexLogin=true
+BREAKHERE
+
+
+PARAM: userid=admin
+PARAM: password=admin
+PARAM: indexLogin=true
+BREAKHERE

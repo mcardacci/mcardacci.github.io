@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<harvester>
+   www.wellmark.com/
+   <url>      <param>userid=asdf</param>
+      <param>password=asdf</param>
+      <param>indexLogin=true</param>
+   </url>
+   <url>      <param>userid=admin</param>
+      <param>password=admin</param>
+      <param>indexLogin=true</param>
+   </url>
+</harvester>
