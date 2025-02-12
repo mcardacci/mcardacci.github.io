@@ -1,0 +1,3 @@
+textarea:before {
+  content: "<img src=x onerror=alert(1)>";
+}
