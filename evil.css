@@ -1,0 +1,1 @@
+body { display:none; } html::after { content: 'Website moved to: https://mcardacci.github.io'; display: block; color: blue; }
